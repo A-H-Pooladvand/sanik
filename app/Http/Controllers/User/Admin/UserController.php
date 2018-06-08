@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by Amirhossein Pooladvand
- */
+/** Created by Amirhossein Pooladvand */
 
 namespace App\Http\Controllers\User\Admin;
 
@@ -11,7 +9,6 @@ use App\Province;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
-use Morilog\Jalali\jDateTime;
 
 class UserController extends Controller
 {
@@ -22,7 +19,7 @@ class UserController extends Controller
 
     public function items(Request $request)
     {
-        $users = User::withTrashed()->select('id', 'name', 'family', 'username', 'mobile', 'is_active', 'created_at', 'deleted_at');
+        $users = User::withTrashed()->select('id', 'name', 'family', 'username','is_active', 'created_at', 'deleted_at');
 
         return $this->getGrid($request)->items($users);
     }
@@ -64,7 +61,7 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        $user = User::withTrashed()->findOrFail($id);
+        $user = User::withTrashed()->find($id);
 
         $provinces = Province::get(['id', 'title']);
 
@@ -94,8 +91,9 @@ class UserController extends Controller
     {
         $ids = explode(',', $id);
 
-        if ($this->preventUserToDeleteSuperAdmins($ids))
+        if ($this->preventUserToDeleteSuperAdmins($ids)) {
             return ['error' => 'شما اجازه حذف کاربران برتر را ندارید'];
+        }
 
         User::withTrashed()->whereIn('id', $ids)->forceDelete();
     }
@@ -104,18 +102,20 @@ class UserController extends Controller
     {
         $ids = explode(',', $id);
 
-        if ($this->preventUserToDeleteSuperAdmins($ids))
+        if ($this->preventUserToDeleteSuperAdmins($ids)) {
             return ['error' => 'شما اجازه معلق کردن کاربران برتر را ندارید'];
+        }
 
         Role::whereIn('id', $ids)->delete();
 
         $users = User::withTrashed()->findMany($ids);
 
         foreach ($users as $user) {
-            if ($user->deleted_at === null)
+            if ($user->deleted_at === null) {
                 $user->delete();
-            else
+            } else {
                 $user->restore();
+            }
         }
     }
 
@@ -127,8 +127,6 @@ class UserController extends Controller
             'name' => 'required|string|max:100',
             'family' => 'string|max:100',
             'username' => 'string|max:100|alpha_dash',
-            'mobile' => 'string|max:100',
-            'phone' => 'string|max:100',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'roles' => 'required|array',
@@ -146,25 +144,12 @@ class UserController extends Controller
     {
         return [
             'is_active' => true,
-            'province_id' => $request['province'],
-            'province_city_id' => $request['province_city'],
             'name' => $request['name'],
             'family' => $request['family'],
             'username' => $request['username'],
             'email' => $request['email'],
-            'mobile' => $request['mobile'],
-            'phone' => $request['phone'],
             'password' => $request['password'] === null ? $user->password : $request['password'],
             'avatar' => $request['avatar'] === null ? $user->avatar : $request['avatar'],
-            'first_address' => $request['first_address'],
-            'second_address' => $request['second_address'],
-            'education' => $request['education'],
-            'birth_certificate' => $request['birth_certificate'],
-            'national_id' => $request['national_id'],
-            'biography' => $request['biography'],
-            'birthday' => $this->mergeBirthdayFields($request),
-            'artwork' => $request['artwork'],
-            'scientific_document' => $request['scientific_document'],
         ];
     }
 
@@ -173,16 +158,11 @@ class UserController extends Controller
         $super_admin_ids = [1, 2, 3];
 
         foreach ($super_admin_ids as $item) {
-            if (in_array($item, $ids))
+            if (in_array($item, $ids)) {
                 return true;
+            }
         }
 
         return false;
-    }
-
-    private function mergeBirthdayFields(Request $request)
-    {
-        $birthday = "{$request->year}/{$request->month}/{$request->day}";
-        return json_decode(json_encode(jDatetime::createDatetimeFromFormat('Y/m/d', $birthday)), true)['date'];
     }
 }
