@@ -60,29 +60,29 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 68);
+/******/ 	return __webpack_require__(__webpack_require__.s = 61);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 68:
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(69);
+module.exports = __webpack_require__(62);
 
 
 /***/ }),
 
-/***/ 69:
+/***/ 62:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(70);
-__webpack_require__(71);
-__webpack_require__(72);
-__webpack_require__(73);
-__webpack_require__(74);
-__webpack_require__(75);
-__webpack_require__(76);
+__webpack_require__(63);
+__webpack_require__(64);
+__webpack_require__(65);
+__webpack_require__(66);
+__webpack_require__(67);
+__webpack_require__(68);
+__webpack_require__(69);
 // require('./files/treegrid-dnd');
 
 
@@ -150,7 +150,7 @@ $.fn.datebox.defaults.parser = function (s) {
 
 /***/ }),
 
-/***/ 70:
+/***/ 63:
 /***/ (function(module, exports) {
 
 var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}return obj;}/**
@@ -166,7 +166,7 @@ opts.oldValue="";var file=$("<input type=\"file\" class=\"textbox-value\">").app
 
 /***/ }),
 
-/***/ 71:
+/***/ 64:
 /***/ (function(module, exports) {
 
 (function ($) {
@@ -449,7 +449,7 @@ opts.oldValue="";var file=$("<input type=\"file\" class=\"textbox-value\">").app
 
 /***/ }),
 
-/***/ 72:
+/***/ 65:
 /***/ (function(module, exports) {
 
 (function ($) {
@@ -1519,7 +1519,7 @@ opts.oldValue="";var file=$("<input type=\"file\" class=\"textbox-value\">").app
 
 /***/ }),
 
-/***/ 73:
+/***/ 66:
 /***/ (function(module, exports) {
 
 if ($.fn.pagination) {
@@ -1567,7 +1567,7 @@ if ($.fn.datetimebox && $.fn.datebox) {
 
 /***/ }),
 
-/***/ 74:
+/***/ 67:
 /***/ (function(module, exports) {
 
 (function ($) {
@@ -1652,7 +1652,7 @@ if ($.fn.datetimebox && $.fn.datebox) {
 
 /***/ }),
 
-/***/ 75:
+/***/ 68:
 /***/ (function(module, exports) {
 
 $.fn.iDataGrid = function (options, rules) {
@@ -1936,7 +1936,7 @@ function treeColumns(toolbar) {
 
 /***/ }),
 
-/***/ 76:
+/***/ 69:
 /***/ (function(module, exports) {
 
 if ($.fn.datagrid) {

@@ -5,5 +5,6 @@
 <title>@yield('title', config('app.name'))</title>
 <meta name="description" content="@yield('description', 'توضیحات مختصر راجع به وبسایت')">
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+<link rel="stylesheet" href="{{ asset('css/public.css') }}">
 
 {!! SEO::generate() !!}

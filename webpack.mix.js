@@ -1,5 +1,8 @@
 let mix = require('laravel-mix');
 
+// Bootstrap-rtl
+mix.sass('resources/assets/public/app.scss', 'public/css/public.css');
+
 // Admin Panel Layout Scripts
 mix.js([
     'resources/assets/admin/js/app.js',
@@ -24,20 +27,7 @@ mix.scripts([
     .sass('resources/assets/admin/file-manager/css/app.scss', 'public/css/file-manager.css');
 
 
-//  Panel Layout Scripts
-mix.js([
-    'resources/assets/panel/js/app.js',
-    'resources/assets/panel/js/_layout/sidebar.js',
-    'resources/assets/panel/js/_layout/header.js',
-    'resources/assets/panel/js/_layout/ajax_post.js',
-    'public/vendor/laravel-filemanager/js/lfm.js',
-    'resources/assets/panel/js/_layout/gallery.js',
-], 'public/js/panel.js')
-    .sass('resources/assets/panel/sass/app.scss', 'public/css/panel.css');
-
-
 // ----- Front -----
-
 
 // Admin Panel Layout Scripts
 mix.js([

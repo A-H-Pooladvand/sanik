@@ -60,12 +60,39 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */,
 /* 1 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10436,33 +10463,6 @@ return jQuery;
 
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
@@ -12846,7 +12846,92 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 4 */
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(12);
+__webpack_require__(16);
+__webpack_require__(17);
+__webpack_require__(18);
+__webpack_require__(19);
+__webpack_require__(20);
+__webpack_require__(21);
+__webpack_require__(22);
+__webpack_require__(23);
+__webpack_require__(24);
+module.exports = __webpack_require__(25);
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(13);
+
+/***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bootstrap_select__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bootstrap_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_bootstrap_select__);
+try {
+    window.$ = global.jQuery = __webpack_require__(2);
+
+    __webpack_require__(3);
+} catch (e) {}
+
+// Bootstrap-Select
+
+
+// Importing persian language.
+__webpack_require__(15);
+
+// Initializing bootstrap-select
+$('.bootstrap-select').selectpicker({
+    style: 'btn-default',
+    width: '100%'
+});
+
+// Animate.css
+$.fn.extend({
+    animateCss: function animateCss(animationName, callback) {
+        var animationEnd = function (el) {
+            var animations = {
+                animation: 'animationend',
+                OAnimation: 'oAnimationEnd',
+                MozAnimation: 'mozAnimationEnd',
+                WebkitAnimation: 'webkitAnimationEnd'
+            };
+
+            for (var t in animations) {
+                if (el.style[t] !== undefined) {
+                    return animations[t];
+                }
+            }
+        }(document.createElement('div'));
+
+        this.addClass('animated ' + animationName).one(animationEnd, function () {
+            $(this).removeClass('animated ' + animationName);
+
+            if (typeof callback === 'function') callback();
+        });
+
+        return this;
+    }
+});
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -12859,7 +12944,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 (function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module unless amdModuleId is set
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (a0) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (a0) {
       return (factory(a0));
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -14725,7 +14810,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 5 */
+/* 15 */
 /***/ (function(module, exports) {
 
 /*
@@ -14747,7 +14832,153 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 6 */
+/* 16 */
+/***/ (function(module, exports) {
+
+$(function () {
+    var $sidebarNavigateCheck = true;
+
+    $('.sidebar__item > li > a').click(function (e) {
+        e.preventDefault();
+    });
+    $('.sidebar__item > li').click(function () {
+        var $this = $(this);
+        var $icon = $this.find('.sidebar-angles');
+        var $sub_menu = $this.find('ul');
+
+        if ($sidebarNavigateCheck) {
+            $sidebarNavigateCheck = false;
+
+            if ($sub_menu.hasClass('enabled')) {
+                $icon.removeClass('fa-angle-up icon-enabled').addClass('fa-angle-down');
+                $sub_menu.slideUp(400, function () {
+                    $sidebarNavigateCheck = true;
+                }).removeClass('enabled');
+            } else {
+                $('.sidebar__item .enabled').slideUp().removeClass('enabled');
+
+                $('.sidebar__item .icon-enabled').removeClass('icon-enabled fa-angle-up').addClass('fa-angle-down');
+                $icon.removeClass('fa-angle-down').addClass('fa-angle-up icon-enabled');
+
+                $sub_menu.addClass('enabled').slideDown(400, function () {
+                    $sidebarNavigateCheck = true;
+                });
+            }
+        }
+    });
+
+    // Slide down navigation menu
+    $('.sidebar__item > li ul a').click(function () {
+        sessionStorage.setItem('active_menu', $(this).closest('.parent-menu').attr('id'));
+    });
+
+    document.getElementById(sessionStorage.getItem('active_menu')).click();
+
+    $(window).resize(function () {
+        if ($(window).width() >= 992) {
+            $('.sidebar').removeClass('active');
+            $('#dark-layout').hide();
+        }
+    });
+
+    // $("a").on("click touchend", function (e) {
+    //     let el = $(this);
+    //     let link = el.attr("href");
+    //     window.location = link;
+    // });
+});
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+$(function () {
+    var $dark_layout = document.getElementById("dark-layout");
+    var $sideBar = $('.sidebar');
+    var $check = true;
+
+    $('#hamburger').click(function () {
+        if ($check) {
+            $check = false;
+            if ($dark_layout.style.display === 'block') {
+                $dark_layout.style.display = 'none';
+                $sideBar.animateCss('fadeOutRight', function () {
+                    $sideBar.removeClass('active');
+                    $check = true;
+                });
+            } else {
+                $sideBar.addClass('active');
+                $dark_layout.style.display = 'block';
+                $sideBar.animateCss('fadeInRight', function () {
+                    $check = true;
+                });
+            }
+        }
+    });
+
+    $('#dark-layout').click(function () {
+        if ($check) {
+            $check = false;
+            $dark_layout.style.display = 'none';
+            $sideBar.animateCss('fadeOutRight', function () {
+                $sideBar.removeClass('active');
+                $check = true;
+            });
+        }
+    });
+});
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+$(function () {
+    $('.btn-ajax').click(function () {
+        // Select the form
+        var $form = $('#admin-layout').find('#form');
+        var $formAction = $form.attr('action');
+
+        if (window.tinyMCE) tinyMCE.triggerSave();
+
+        $.post($formAction, $form.serialize()).done(function (response) {
+
+            // Something went wrong in checking and validating
+            if (response['error'] && typeof response['error'] !== 'undefined') {
+                $form.find('alert error-response').remove();
+                $form.prepend('<div class="alert alert-danger error-response">' + response['error'] + '</div>');
+            } else if (response['denied'] && typeof response['denied'] !== 'undefined') {
+                $.confirm({
+                    title: 'خطا',
+                    type: 'orange',
+                    icon: 'fa fa-exclamation-triangle text-warning fa-fw',
+                    content: response['denied'],
+                    buttons: {
+                        close: {
+                            text: 'تایید',
+                            btnClass: 'btn-warning'
+                        }
+                    }
+                });
+            }
+
+            // Successful Response
+            if (response['message']) {
+                $form.empty().append('<div class="alert alert-success">' + response['message'] + '</div>');
+            }
+        }).fail(function (response) {
+            $form.find('.ajax-error-message').remove();
+            var $errors = response.responseJSON;
+            $form.prepend('<div class="alert alert-danger ajax-error-message alert-dismissible" role="alert">\n' + '    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>\n' + '    <strong>خطا!</strong> لطفا موارد زیر را برطرف نمایید.\n' + '</div>');
+
+            $.each($errors['errors'], function (i, val) {
+                $('<div>' + '<small> - ' + val + '</small>' + '</div>').appendTo($form.find('.ajax-error-message'));
+            });
+        });
+    });
+});
+
+/***/ }),
+/* 19 */
 /***/ (function(module, exports) {
 
 (function ($) {
@@ -14816,237 +15047,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
         });
     };
 })(jQuery);
-
-/***/ }),
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(15);
-__webpack_require__(17);
-__webpack_require__(18);
-__webpack_require__(19);
-__webpack_require__(6);
-__webpack_require__(20);
-__webpack_require__(21);
-__webpack_require__(22);
-__webpack_require__(23);
-__webpack_require__(24);
-module.exports = __webpack_require__(25);
-
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(16);
-
-/***/ }),
-/* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bootstrap_select__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bootstrap_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_bootstrap_select__);
-try {
-    window.$ = global.jQuery = __webpack_require__(1);
-
-    __webpack_require__(3);
-} catch (e) {}
-
-// Bootstrap-Select
-
-
-// Importing persian language.
-__webpack_require__(5);
-
-// Initializing bootstrap-select
-$('.bootstrap-select').selectpicker({
-    style: 'btn-default',
-    width: '100%'
-});
-
-// Animate.css
-$.fn.extend({
-    animateCss: function animateCss(animationName, callback) {
-        var animationEnd = function (el) {
-            var animations = {
-                animation: 'animationend',
-                OAnimation: 'oAnimationEnd',
-                MozAnimation: 'mozAnimationEnd',
-                WebkitAnimation: 'webkitAnimationEnd'
-            };
-
-            for (var t in animations) {
-                if (el.style[t] !== undefined) {
-                    return animations[t];
-                }
-            }
-        }(document.createElement('div'));
-
-        this.addClass('animated ' + animationName).one(animationEnd, function () {
-            $(this).removeClass('animated ' + animationName);
-
-            if (typeof callback === 'function') callback();
-        });
-
-        return this;
-    }
-});
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
-$(function () {
-    var $sidebarNavigateCheck = true;
-
-    $('.sidebar__item > li > a').click(function (e) {
-        e.preventDefault();
-    });
-    $('.sidebar__item > li').click(function () {
-        var $this = $(this);
-        var $icon = $this.find('.sidebar-angles');
-        var $sub_menu = $this.find('ul');
-
-        if ($sidebarNavigateCheck) {
-            $sidebarNavigateCheck = false;
-
-            if ($sub_menu.hasClass('enabled')) {
-                $icon.removeClass('fa-angle-up icon-enabled').addClass('fa-angle-down');
-                $sub_menu.slideUp(400, function () {
-                    $sidebarNavigateCheck = true;
-                }).removeClass('enabled');
-            } else {
-                $('.sidebar__item .enabled').slideUp().removeClass('enabled');
-
-                $('.sidebar__item .icon-enabled').removeClass('icon-enabled fa-angle-up').addClass('fa-angle-down');
-                $icon.removeClass('fa-angle-down').addClass('fa-angle-up icon-enabled');
-
-                $sub_menu.addClass('enabled').slideDown(400, function () {
-                    $sidebarNavigateCheck = true;
-                });
-            }
-        }
-    });
-
-    // Slide down navigation menu
-    $('.sidebar__item > li ul a').click(function () {
-        sessionStorage.setItem('active_menu', $(this).closest('.parent-menu').attr('id'));
-    });
-
-    document.getElementById(sessionStorage.getItem('active_menu')).click();
-
-    $(window).resize(function () {
-        if ($(window).width() >= 992) {
-            $('.sidebar').removeClass('active');
-            $('#dark-layout').hide();
-        }
-    });
-
-    // $("a").on("click touchend", function (e) {
-    //     let el = $(this);
-    //     let link = el.attr("href");
-    //     window.location = link;
-    // });
-});
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-$(function () {
-    var $dark_layout = document.getElementById("dark-layout");
-    var $sideBar = $('.sidebar');
-    var $check = true;
-
-    $('#hamburger').click(function () {
-        if ($check) {
-            $check = false;
-            if ($dark_layout.style.display === 'block') {
-                $dark_layout.style.display = 'none';
-                $sideBar.animateCss('fadeOutRight', function () {
-                    $sideBar.removeClass('active');
-                    $check = true;
-                });
-            } else {
-                $sideBar.addClass('active');
-                $dark_layout.style.display = 'block';
-                $sideBar.animateCss('fadeInRight', function () {
-                    $check = true;
-                });
-            }
-        }
-    });
-
-    $('#dark-layout').click(function () {
-        if ($check) {
-            $check = false;
-            $dark_layout.style.display = 'none';
-            $sideBar.animateCss('fadeOutRight', function () {
-                $sideBar.removeClass('active');
-                $check = true;
-            });
-        }
-    });
-});
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
-$(function () {
-    $('.btn-ajax').click(function () {
-        // Select the form
-        var $form = $('#admin-layout').find('#form');
-        var $formAction = $form.attr('action');
-
-        if (window.tinyMCE) tinyMCE.triggerSave();
-
-        $.post($formAction, $form.serialize()).done(function (response) {
-
-            // Something went wrong in checking and validating
-            if (response['error'] && typeof response['error'] !== 'undefined') {
-                $form.find('alert error-response').remove();
-                $form.prepend('<div class="alert alert-danger error-response">' + response['error'] + '</div>');
-            } else if (response['denied'] && typeof response['denied'] !== 'undefined') {
-                $.confirm({
-                    title: 'خطا',
-                    type: 'orange',
-                    icon: 'fa fa-exclamation-triangle text-warning fa-fw',
-                    content: response['denied'],
-                    buttons: {
-                        close: {
-                            text: 'تایید',
-                            btnClass: 'btn-warning'
-                        }
-                    }
-                });
-            }
-
-            // Successful Response
-            if (response['message']) {
-                $form.empty().append('<div class="alert alert-success">' + response['message'] + '</div>');
-            }
-        }).fail(function (response) {
-            $form.find('.ajax-error-message').remove();
-            var $errors = response.responseJSON;
-            $form.prepend('<div class="alert alert-danger ajax-error-message alert-dismissible" role="alert">\n' + '    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>\n' + '    <strong>خطا!</strong> لطفا موارد زیر را برطرف نمایید.\n' + '</div>');
-
-            $.each($errors['errors'], function (i, val) {
-                $('<div>' + '<small> - ' + val + '</small>' + '</div>').appendTo($form.find('.ajax-error-message'));
-            });
-        });
-    });
-});
 
 /***/ }),
 /* 20 */
