@@ -30,9 +30,9 @@
 
         <div class="pull-left">
             @if(!empty($tag['slug']))
-                {{ Breadcrumbs::render('category-edit', $tag) }}
+                {{ Breadcrumbs::render('tag-edit', $tag) }}
             @else
-                {{ Breadcrumbs::render('category-create') }}
+                {{ Breadcrumbs::render('tag-create') }}
             @endif
         </div>
 

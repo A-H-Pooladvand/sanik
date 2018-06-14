@@ -14,22 +14,15 @@
     @push('scripts')
         <script>
             $('#dg').iDataGrid({
-                    title: 'لیست اخبار',
-                    url: '{{ route('admin.news.items') }}',
+                    title: 'لیست آلبوم',
+                    url: '{{ route('admin.album.items') }}',
                     columns: [[
                         {field: 'checkbox', checkbox: true},
                         {field: 'id', sortable: true, title: 'شناسه', align: 'center'},
                         {
                             field: 'title', sortable: true, width: '200', title: 'عنوان', align: 'center',
                             formatter: function (val, row) {
-                                return '<a href="' + '{{ route('admin.news.index') }}' + '/' + row.id + '" target="_blank">' + val + '</a>';
-                            }
-                        },
-                        {field: 'summary', sortable: true, width: '200', title: 'خلاصه', align: 'center'},
-                        {
-                            field: 'status', sortable: true, title: 'وضعیت', align: 'center',
-                            formatter: function (val, row) {
-                                return row.status_farsi;
+                                return '<a href="' + '{{ route('admin.album.index') }}' + '/' + row.id + '" target="_blank">' + val + '</a>';
                             }
                         },
                         {field: 'created_at', width: 150, sortable: true, title: 'تاریخ ایجاد', align: 'center'},
@@ -38,15 +31,15 @@
                     toolbar: [
                         {
                             name: 'show',
-                            link: '{{ route('admin.news.index') }}' + '/' + '{id}',
+                            link: '{{ route('admin.album.index') }}' + '/' + '{id}',
                         },
                         {
                             name: 'edit',
-                            link: '{{ route('admin.news.index') }}' + '/' + 'edit' + '/' + '{id}',
+                            link: '{{ route('admin.album.index') }}' + '/' + 'edit' + '/' + '{id}',
                         },
                         {
                             name: 'delete',
-                            link: '{{ route('admin.news.index') }}' + '/' + '{id}',
+                            link: '{{ route('admin.album.index') }}' + '/' + '{id}',
                         },
                     ]
                 },
