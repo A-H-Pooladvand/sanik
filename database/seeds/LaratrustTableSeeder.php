@@ -201,6 +201,31 @@ class LaratrustTableSeeder extends Seeder
                     ],
                 ]
             ],
+            // Project
+            [
+                'title' => 'پروژه',
+                'detail' => [
+                    ['name' => 'create-project',
+                        'display_name' => 'ایجاد پروژه',
+                        'description' => 'توانایی ایجاد پروژه',
+                    ],
+                    [
+                        'name' => 'read-project',
+                        'display_name' => 'مشاهده پروژه',
+                        'description' => 'توانایی مشاهده پروژه',
+                    ],
+                    [
+                        'name' => 'edit-project',
+                        'display_name' => 'ویرایش پروژه',
+                        'description' => 'توانایی ویرایش پروژه',
+                    ],
+                    [
+                        'name' => 'delete-project',
+                        'display_name' => 'حذف پروژه',
+                        'description' => 'توانایی حذف پروژه',
+                    ],
+                ]
+            ],
             //Album
             [
                 'title' => 'آلبوم تصاویر',

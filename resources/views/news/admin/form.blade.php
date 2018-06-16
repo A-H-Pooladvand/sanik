@@ -125,19 +125,6 @@
 
         @endcomponent
 
-        @component('_components.filemanager--multiple')
-
-            @slot('type') multimedia @endslot
-            @slot('label') پیوست فایل @endslot
-            @slot('index') 0 @endslot
-            @if(!empty($news->files))
-                @slot('data', $news->files)
-            @endif
-
-        @endcomponent
-
-
-
     </form>
 
     @push('scripts')

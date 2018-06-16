@@ -251,3 +251,53 @@ Breadcrumbs::register('audible-edit', function (Breadcrumb $breadcrumbs, $audibl
     $breadcrumbs->parent('audible-show', $audible);
     $breadcrumbs->push('ویرایش کوتاه و شنیدنی', route('admin.audible.edit', $audible->id));
 });
+
+/** Project */
+
+# Projects
+Breadcrumbs::register('project', function (Breadcrumb $breadcrumbs) {
+    $breadcrumbs->push('لیست پروژه ها', route('admin.project.index'));
+});
+
+# Projects > Create
+Breadcrumbs::register('project-create', function (Breadcrumb $breadcrumbs) {
+    $breadcrumbs->parent('project');
+    $breadcrumbs->push('افزودن پروژه', route('admin.project.create'));
+});
+
+# Projects > Show
+Breadcrumbs::register('project-show', function (Breadcrumb $breadcrumbs, $project) {
+    $breadcrumbs->parent('project');
+    $breadcrumbs->push('مشاهده پروژه', route('admin.project.show', $project->id));
+});
+
+# Projects > Show > Edit
+Breadcrumbs::register('project-edit', function (Breadcrumb $breadcrumbs, $project) {
+    $breadcrumbs->parent('project-show', $project);
+    $breadcrumbs->push('ویرایش پروژه', route('admin.project.edit', $project->id));
+});
+
+/** Project Category */
+
+# Categories
+Breadcrumbs::register('project-categories', function (Breadcrumb $breadcrumbs) {
+    $breadcrumbs->push('لیست دسته بندی پروژه ها', route('admin.project.category.index'));
+});
+
+# Category > Create
+Breadcrumbs::register('project-category-create', function (Breadcrumb $breadcrumbs) {
+    $breadcrumbs->parent('project-categories');
+    $breadcrumbs->push('افزودن دسته بندی پروژه', route('admin.project.category.create'));
+});
+
+# Category > Show
+Breadcrumbs::register('project-category-show', function (Breadcrumb $breadcrumbs, $category) {
+    $breadcrumbs->parent('project-categories');
+    $breadcrumbs->push('مشاهده دسته بندی پروژه', route('admin.project.category.show', $category->id));
+});
+
+# Categories > Show > Edit
+Breadcrumbs::register('project-category-edit', function (Breadcrumb $breadcrumbs, $category) {
+    $breadcrumbs->parent('project-category-show', $category);
+    $breadcrumbs->push('ویرایش دسته بندی پروژه', route('admin.project.category.edit', $category->id));
+});

@@ -16,13 +16,13 @@ class KalaamTableSeeder extends Seeder
     public function run()
     {
         // Seed News with category
-        factory(News::class, 200)->create()->each(function ($item) {
+        factory(News::class, 50)->create()->each(function (News $item) {
 
-            $categories = factory(Category::class, rand(2, 4))->create(['category_type' => News::class])->toArray();
-            $tags = factory(Tag::class, rand(2, 4))->create()->toArray();
+            $categories = factory(Category::class, rand(2, 4))->create(['category_type' => News::class])->pluck('id');
+            $tags = factory(Tag::class, rand(2, 4))->create()->pluck('id');
 
-            $item->tags()->attach(array_column($tags, 'id'));
-            return $item->categories()->sync(array_column($categories, 'id'));
+            $item->tags()->attach($tags);
+            return $item->categories()->sync($categories);
 
         });
 

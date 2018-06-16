@@ -15,6 +15,7 @@ class CreateContactUsTable extends Migration
     {
         Schema::create('contact_us', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title', 150);
             $table->text('content');
             $table->timestamps();
         });

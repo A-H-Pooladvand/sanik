@@ -17,6 +17,7 @@
         "laravel/framework": "5.5.*",
         "laravel/passport": "4.0.x-dev",
         "laravel/tinker": "~1.0",
+        "mews/captcha": "^2.2",
         "morilog/jalali": "^2.3",
         "santigarcor/laratrust": "5.0.*",
         "unisharp/laravel-filemanager": "~1.8"

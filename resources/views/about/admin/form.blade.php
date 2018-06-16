@@ -6,16 +6,23 @@
         {{ method_field('PUT') }}
 
         <div class="col-sm-8">
+
             <div class="form-group">
                 <label for="title" class="control-label">عنوان</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ $about->title }}">
             </div>
+
+            <div class="form-group">
+                <label for="summary" class="control-label">خلاصه</label>
+                <textarea name="summary" class="form-control" id="summary" cols="30" rows="10">{{ $about->summary }}</textarea>
+            </div>
+
         </div>
 
         <div class="col-sm-4">
 
             <div class="form-group">
-                <label for="image" class="control-label">تصویر اسلاید</label>
+                <label for="image" class="control-label">تصویر</label>
                 <div class="input-group">
                 <span class="input-group-btn">
                 <a id="file-manager" data-input="image" data-preview="image-preview" class="btn btn-primary">

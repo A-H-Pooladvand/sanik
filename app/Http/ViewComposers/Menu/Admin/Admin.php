@@ -99,6 +99,35 @@ return [
             ]
         ]
     ],
+    // Project
+    [
+        'title' => 'پروژه ها',
+        'icon' => 'fa fa-fw fa-tasks',
+        'link' => '#',
+        'permission' => 'project',
+        'sub' => [
+            [
+                'title' => 'افزودن پروژه',
+                'link' => route('admin.project.create'),
+                'permission' => 'create-project'
+            ],
+            [
+                'title' => 'لیست پروژه ها',
+                'link' => route('admin.project.index'),
+                'permission' => 'read-project'
+            ],
+            [
+                'title' => 'افزودن دسته بندی',
+                'link' => route('admin.project.category.create'),
+                'permission' => 'create-project|edit-project'
+            ],
+            [
+                'title' => 'لیست دسته بندی ها',
+                'link' => route('admin.project.category.index'),
+                'permission' => 'create-project|edit-project'
+            ]
+        ]
+    ],
     // Album
     [
         'title' => 'آلبوم تصاویر',

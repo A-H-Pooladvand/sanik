@@ -24,12 +24,12 @@
 
         <tr>
             <th>تلفن تماس</th>
-            <td>{{ $contact->mobile }}</td>
+            <td>{{ $contact->phone }}</td>
         </tr>
 
         <tr>
             <th>موضوع تماس</th>
-            <td>{!! $contact->title !!}</td>
+            <td>{!! $contact->subject !!}</td>
         </tr>
 
         <tr>

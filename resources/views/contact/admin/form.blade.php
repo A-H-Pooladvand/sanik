@@ -6,6 +6,11 @@
         {{ method_field('PUT') }}
 
         <div class="form-group">
+            <label for="input_title" class="control-label">عنوان</label>
+            <input id="input_title" name="title" type="text" class="form-control" value="{{ $contact->title ?? '' }}">
+        </div>
+
+        <div class="form-group">
             @script(tinymce/tinymce.js)
             <label for="input_content" class="control-label">محتوا</label>
             <textarea name="content" id="input_content" class="tinymce">{{ $contact->content ?? '' }}</textarea>
