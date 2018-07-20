@@ -1,39 +1,38 @@
 @extends('_layouts.front.index')
 
 @section('content')
+    <main>
 
-    <div id="main-content">
+        <div class="page-loader">
+            <div class="loader">Loading...</div>
+        </div>
 
-        @include('_includes.breadcrumb')
+        <div class="main">
 
-        <section class="kopa-area kopa-area-20">
-            <div class="container">
-                <div class="widget kopa-widget-course_info">
-                    <div class="widget-content module-course_info-01">
-
-                        <div class="right-content">
-
-                            <div class="course-author">
-                                <div class="thumb">
-                                    <img src="{{ image_url($about->image, 27, 40, true) }}" alt="{{ $about->title }}" title="{{ $about->title }}">
-                                </div>
-                                <div class="content">
-                                    <h4>{{ $about->title }}</h4>
-                                    <div class="text">
-                                        <i class="fa fa-quote-left"></i>
-                                        <p>{!! $about->content !!}</p>
-                                    </div>
-                                </div>
+            <section class="module" id="about">
+                <div class="row position-relative m-0">
+                    <div class="col-xs-12 col-md-6 side-image" data-background="{{ $about->image }}"></div>
+                    <div class="col-xs-12 col-md-6 col-md-offset-6 side-image-text">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h2 class="module-title font-alt align-left">{{ $about->title }}</h2>
+                                <div class="module-subtitle font-serif align-left">{{ $about->summary }}</div>
+                                <p>{{ $about->content }}</p>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-    </div>
+        </div>
+
+        <div class="scroll-up">
+            <a href="#totop">
+                <i class="fa fa-angle-double-up"></i>
+            </a>
+        </div>
+
+    </main>
 
 
 @endsection

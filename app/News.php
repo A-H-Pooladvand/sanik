@@ -91,15 +91,4 @@ class News extends Model
                 return 'پیش نویس';
         }
     }
-
-    public function getHasCommentFaAttribute()
-    {
-        switch ($this->attributes['has_comment']) {
-            case true:
-                return 'فعال';
-                break;
-            default:
-                return 'غیر فعال';
-        }
-    }
 }

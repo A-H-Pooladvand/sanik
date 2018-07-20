@@ -16,39 +16,14 @@ class Category extends Model
         return $this->morphedByMany(News::class, 'categorizable', 'categorizables');
     }
 
-    public function audibles()
+    public function album()
     {
-        return $this->morphedByMany(Audible::class, 'categorizable', 'categorizables');
-    }
-
-    public function terms()
-    {
-        return $this->morphedByMany(Term::class, 'categorizable', 'categorizables');
-    }
-
-    public function events()
-    {
-        return $this->morphedByMany(Event::class, 'categorizable', 'categorizables');
+        return $this->morphedByMany(Album::class, 'categorizable', 'categorizables');
     }
 
     public function pages()
     {
         return $this->morphedByMany(Page::class, 'categorizable', 'categorizables');
-    }
-
-    public function books()
-    {
-        return $this->morphedByMany(Book::class, 'categorizable', 'categorizables');
-    }
-
-    public function meetings()
-    {
-        return $this->morphedByMany(Meeting::class, 'categorizable', 'categorizables');
-    }
-
-    public function courses()
-    {
-        return $this->morphedByMany(Course::class, 'categorizable', 'categorizables');
     }
 
     public function parent()

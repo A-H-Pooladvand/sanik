@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Contact\Admin;
 
-use App\Feedback;
+use App\Contact;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Telegram\Bot\Objects\Contact;
 
 class ContactController extends Controller
 {
@@ -16,14 +15,14 @@ class ContactController extends Controller
 
     public function items(Request $request)
     {
-        $contacts = Feedback::query();
+        $contacts = Contact::query();
 
         return $this->getGrid($request)->items($contacts);
     }
 
     public function show($id)
     {
-        $contact = Feedback::findOrFail($id);
+        $contact = Contact::findOrFail($id);
 //        return $contact;
         return view('contact.admin.contacts.show', compact('contact'));
     }
@@ -32,6 +31,6 @@ class ContactController extends Controller
     {
         $ids = explode(',', $id);
 
-        Feedback::whereIn('id', $ids)->delete();
+        Contact::whereIn('id', $ids)->delete();
     }
 }

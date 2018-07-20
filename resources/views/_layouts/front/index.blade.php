@@ -7,19 +7,16 @@
     @stack('styles')
 </head>
 
-<body class="text-justify">
+<body class="text-justify" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
 
 <div id="main-container">
-
-
-@include('_layouts.front.includes.header')
-
+    @include('_layouts.front.includes.header')
+</div>
 
 @yield('content')
 
 
 @include('_layouts.front.includes.footer')
-
 
 @include('_layouts.front.includes.scripts')
 @stack('top-scripts')

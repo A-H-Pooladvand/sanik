@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\_Controller\CategoryHandler;
 use App\Http\Controllers\_Controller\Grid\Grid;
 use App\Http\Controllers\_Controller\TagHandler;
 use App\Http\Controllers\_Controller\VisitHandler;

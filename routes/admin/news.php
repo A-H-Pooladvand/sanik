@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'interviews', 'as' => 'news.', 'namespace' => 'News\Admin'], function () {
+Route::group(['prefix' => 'news', 'as' => 'news.', 'namespace' => 'News\Admin'], function () {
 
     Route::get('/', 'NewsController@index')->name('index')->middleware('permission:read-news');
     Route::post('items', 'NewsController@items')->name('items')->middleware('permission:read-news');

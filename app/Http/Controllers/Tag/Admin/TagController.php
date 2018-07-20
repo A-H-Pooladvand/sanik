@@ -69,11 +69,7 @@ class TagController extends Controller
     {
         $ids = explode(',', $id);
 
-        try {
-            Tag::whereIn('id', $ids)->delete();
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
+        Tag::whereIn('id', $ids)->delete();
 
         return 'رکوردها به درستی حذف گردیدند.';
     }

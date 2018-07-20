@@ -1,23 +1,13 @@
-{{--<script src="{{ asset('js/admin.js') }}"></script>--}}
-
-<script src="{{ asset('assets/front/js/jquery-2.2.4.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/slick.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/jquery.sliderPro.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/imagesloaded.pkgd.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/jquery.validate.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/owl.carousel.js') }}"></script>
-<script src="{{ asset('assets/front/js/jquery.waypoints.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/jquery.counterup.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/jquery.mCustomScrollbar.js') }}"></script>
-<script src="{{ asset('assets/front/js/viewportchecker.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/jquery.matchHeight-min.js') }}"></script>
-<script src="{{ asset('assets/front/js/base.js') }}"></script>
-
-<script>
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-</script>
+<script src="{{ asset('assets_front/lib/jquery/dist/jquery.js') }}"></script>
+<script src="{{ asset('assets_front/lib/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets_front/lib/wow/dist/wow.js') }}"></script>
+<script src="{{ asset('assets_front/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js') }}"></script>
+<script src="{{ asset('assets_front/lib/isotope/dist/isotope.pkgd.js') }}"></script>
+<script src="{{ asset('assets_front/lib/imagesloaded/imagesloaded.pkgd.js') }}"></script>
+<script src="{{ asset('assets_front/lib/flexslider/jquery.flexslider.js') }}"></script>
+<script src="{{ asset('assets_front/lib/owl.carousel/dist/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets_front/lib/smoothscroll.js') }}"></script>
+<script src="{{ asset('assets_front/lib/magnific-popup/dist/jquery.magnific-popup.js') }}"></script>
+<script src="{{ asset('assets_front/lib/simple-text-rotator/jquery.simple-text-rotator.min.js') }}"></script>
+<script src="{{ asset('assets_front/js/plugins.js') }}"></script>
+<script src="{{ asset('assets_front/js/main.js') }}"></script>

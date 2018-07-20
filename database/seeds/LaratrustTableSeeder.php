@@ -24,13 +24,11 @@ class LaratrustTableSeeder extends Seeder
         $accounts = [
             [
                 'user' => [
-                    'name' => 'Hamid',
-                    'family' => 'Madanizadegan',
-                    'username' => 'Hamin-Madanizadegan',
-                    'mobile' => '09121111111',
-                    'phone' => '02112345678',
+                    'name' => 'Amirhossein',
+                    'family' => 'Pooladvand',
+                    'username' => 'Amirhossein-pooladvand',
                     'avatar' => 'files/_test/' . rand(1, 10) . '.jpg',
-                    'email' => 'madanizadegan@gmail.com',
+                    'email' => 'a.h.pooladvand@gmail.com',
                     'password' => '123',
                     'remember_token' => str_random(10),
                     'is_active' => true
@@ -46,8 +44,6 @@ class LaratrustTableSeeder extends Seeder
                     'name' => 'پشتیبان',
                     'family' => 'سیستم',
                     'username' => 'system-support',
-                    'mobile' => '09125878084',
-                    'phone' => '09125878084',
                     'avatar' => 'files/_test/' . rand(1, 10) . '.jpg',
                     'email' => 'qwe@qwe.com',
                     'password' => 'qwe',
@@ -65,8 +61,6 @@ class LaratrustTableSeeder extends Seeder
                     'name' => 'modir',
                     'family' => 'modir',
                     'username' => 'modir-modir',
-                    'mobile' => 'xxxxxxxxxxx',
-                    'phone' => 'xxxxxxxxxxx',
                     'avatar' => 'files/_test/' . rand(1, 10) . '.jpg',
                     'email' => 'modir@gmail.com',
                     'password' => 'modir',
@@ -207,153 +201,53 @@ class LaratrustTableSeeder extends Seeder
                     ],
                 ]
             ],
-            // Audible
+            // Project
             [
-                'title' => 'کوتاه و شنیدنی',
+                'title' => 'پروژه',
                 'detail' => [
-                    ['name' => 'create-audible',
-                        'display_name' => 'ایجاد کوتاه و شنیدنی',
-                        'description' => 'توانایی ایجاد کوتاه و شنیدنی',
+                    ['name' => 'create-project',
+                        'display_name' => 'ایجاد پروژه',
+                        'description' => 'توانایی ایجاد پروژه',
                     ],
                     [
-                        'name' => 'read-audible',
-                        'display_name' => 'مشاهده کوتاه و شنیدنی',
-                        'description' => 'توانایی مشاهده کوتاه و شنیدنی',
+                        'name' => 'read-project',
+                        'display_name' => 'مشاهده پروژه',
+                        'description' => 'توانایی مشاهده پروژه',
                     ],
                     [
-                        'name' => 'edit-audible',
-                        'display_name' => 'ویرایش کوتاه و شنیدنی',
-                        'description' => 'توانایی ویرایش کوتاه و شنیدنی',
+                        'name' => 'edit-project',
+                        'display_name' => 'ویرایش پروژه',
+                        'description' => 'توانایی ویرایش پروژه',
                     ],
                     [
-                        'name' => 'delete-audible',
-                        'display_name' => 'حذف کوتاه و شنیدنی',
-                        'description' => 'توانایی حذف کوتاه و شنیدنی',
+                        'name' => 'delete-project',
+                        'display_name' => 'حذف پروژه',
+                        'description' => 'توانایی حذف پروژه',
                     ],
                 ]
             ],
-            //Course
+            //Album
             [
-                'title' => 'درس',
+                'title' => 'آلبوم تصاویر',
                 'detail' => [
-                    ['name' => 'create-course',
-                        'display_name' => 'ایجاد درس',
-                        'description' => 'توانایی ایجاد درس',
+                    ['name' => 'create-album',
+                        'display_name' => 'ایجاد آلبوم تصاویر',
+                        'description' => 'توانایی ایجاد آلبوم تصاویر',
                     ],
                     [
-                        'name' => 'read-course',
-                        'display_name' => 'مشاهده درس',
-                        'description' => 'توانایی مشاهده درس',
+                        'name' => 'read-album',
+                        'display_name' => 'مشاهده آلبوم تصاویر',
+                        'description' => 'توانایی مشاهده آلبوم تصاویر',
                     ],
                     [
-                        'name' => 'edit-course',
-                        'display_name' => 'ویرایش درس',
-                        'description' => 'توانایی ویرایش درس',
+                        'name' => 'edit-album',
+                        'display_name' => 'ویرایش آلبوم تصاویر',
+                        'description' => 'توانایی ویرایش آلبوم تصاویر',
                     ],
                     [
-                        'name' => 'delete-course',
-                        'display_name' => 'حذف درس',
-                        'description' => 'توانایی حذف درس',
-                    ],
-                ]
-            ],
-            //Term
-            [
-                'title' => 'دوره',
-                'detail' => [
-                    ['name' => 'create-term',
-                        'display_name' => 'ایجاد دوره',
-                        'description' => 'توانایی ایجاد دوره',
-                    ],
-                    [
-                        'name' => 'read-term',
-                        'display_name' => 'مشاهده دوره',
-                        'description' => 'توانایی مشاهده دوره',
-                    ],
-                    [
-                        'name' => 'edit-term',
-                        'display_name' => 'ویرایش دوره',
-                        'description' => 'توانایی ویرایش دوره',
-                    ],
-                    [
-                        'name' => 'delete-term',
-                        'display_name' => 'حذف دوره',
-                        'description' => 'توانایی حذف دوره',
-                    ],
-                ]
-            ],
-            //Meeting
-            [
-                'title' => 'نشست',
-                'detail' => [
-                    ['name' => 'create-meeting',
-                        'display_name' => 'ایجاد نشست',
-                        'description' => 'توانایی ایجاد نشست',
-                    ],
-                    [
-                        'name' => 'read-meeting',
-                        'display_name' => 'مشاهده نشست',
-                        'description' => 'توانایی مشاهده نشست',
-                    ],
-                    [
-                        'name' => 'edit-meeting',
-                        'display_name' => 'ویرایش نشست',
-                        'description' => 'توانایی ویرایش نشست',
-                    ],
-                    [
-                        'name' => 'delete-meeting',
-                        'display_name' => 'حذف نشست',
-                        'description' => 'توانایی حذف نشست',
-                    ],
-                ]
-            ],
-            //Panel-Blog
-            [
-                'title' => 'پنل-بلاگ',
-                'detail' => [
-                    ['name' => 'create-panel-blog',
-                        'display_name' => 'ایجاد پنل-بلاگ',
-                        'description' => 'توانایی ایجاد پنل-بلاگ',
-                    ],
-                    [
-                        'name' => 'read-panel-blog',
-                        'display_name' => 'مشاهده پنل-بلاگ',
-                        'description' => 'توانایی مشاهده پنل-بلاگ',
-                    ],
-                    [
-                        'name' => 'edit-panel-blog',
-                        'display_name' => 'ویرایش پنل-بلاگ',
-                        'description' => 'توانایی ویرایش پنل-بلاگ',
-                    ],
-                    [
-                        'name' => 'delete-panel-blog',
-                        'display_name' => 'حذف پنل-بلاگ',
-                        'description' => 'توانایی حذف پنل-بلاگ',
-                    ],
-                ]
-            ],
-            //Book
-            [
-                'title' => 'کتاب',
-                'detail' => [
-                    ['name' => 'create-book',
-                        'display_name' => 'ایجاد کتاب',
-                        'description' => 'توانایی ایجاد کتاب',
-                    ],
-                    [
-                        'name' => 'read-book',
-                        'display_name' => 'مشاهده کتاب',
-                        'description' => 'توانایی مشاهده کتاب',
-                    ],
-                    [
-                        'name' => 'edit-book',
-                        'display_name' => 'ویرایش کتاب',
-                        'description' => 'توانایی ویرایش کتاب',
-                    ],
-                    [
-                        'name' => 'delete-book',
-                        'display_name' => 'حذف کتاب',
-                        'description' => 'توانایی حذف کتاب',
+                        'name' => 'delete-album',
+                        'display_name' => 'حذف آلبوم تصاویر',
+                        'description' => 'توانایی حذف آلبوم تصاویر',
                     ],
                 ]
             ],
@@ -383,84 +277,32 @@ class LaratrustTableSeeder extends Seeder
                     ],
                 ]
             ],
-            // Place
-            [
-                'title' => 'اماکن',
-                'detail' => [
-                    [
-                        'name' => 'create-place',
-                        'display_name' => 'ایجاد مکان',
-                        'description' => 'توانایی ایجاد مکان',
-                    ],
-                    [
-                        'name' => 'read-place',
-                        'display_name' => 'مشاهده مکان',
-                        'description' => 'توانایی مشاهده مکان',
-                    ],
-                    [
-                        'name' => 'edit-place',
-                        'display_name' => 'ویرایش مکان',
-                        'description' => 'توانایی ویرایش مکان',
-                    ],
-                    [
-                        'name' => 'delete-place',
-                        'display_name' => 'حذف مکان',
-                        'description' => 'توانایی حذف مکان',
-                    ],
-                ]
-            ],
-            // Event
-            [
-                'title' => 'رویداد',
-                'detail' => [
-                    [
-                        'name' => 'create-event',
-                        'display_name' => 'ایجاد رویداد',
-                        'description' => 'توانایی ایجاد رویداد',
-                    ],
-                    [
-                        'name' => 'read-event',
-                        'display_name' => 'مشاهده رویداد',
-                        'description' => 'توانایی مشاهده رویداد',
-                    ],
-                    [
-                        'name' => 'edit-event',
-                        'display_name' => 'ویرایش رویداد',
-                        'description' => 'توانایی ویرایش رویداد',
-                    ],
-                    [
-                        'name' => 'delete-event',
-                        'display_name' => 'حذف رویداد',
-                        'description' => 'توانایی حذف رویداد',
-                    ],
-                ]
-            ],
             // Page
-            [
-                'title' => 'صفحات',
-                'detail' => [
-                    [
-                        'name' => 'create-page',
-                        'display_name' => 'ایجاد صفحه',
-                        'description' => 'توانایی ایجاد صفحه',
-                    ],
-                    [
-                        'name' => 'read-page',
-                        'display_name' => 'مشاهده صفحه',
-                        'description' => 'توانایی مشاهده صفحه',
-                    ],
-                    [
-                        'name' => 'edit-page',
-                        'display_name' => 'ویرایش صفحه',
-                        'description' => 'توانایی ویرایش صفحه',
-                    ],
-                    [
-                        'name' => 'delete-page',
-                        'display_name' => 'حذف صفحه',
-                        'description' => 'توانایی حذف صفحه',
-                    ],
-                ]
-            ],
+//            [
+//                'title' => 'صفحات',
+//                'detail' => [
+//                    [
+//                        'name' => 'create-page',
+//                        'display_name' => 'ایجاد صفحه',
+//                        'description' => 'توانایی ایجاد صفحه',
+//                    ],
+//                    [
+//                        'name' => 'read-page',
+//                        'display_name' => 'مشاهده صفحه',
+//                        'description' => 'توانایی مشاهده صفحه',
+//                    ],
+//                    [
+//                        'name' => 'edit-page',
+//                        'display_name' => 'ویرایش صفحه',
+//                        'description' => 'توانایی ویرایش صفحه',
+//                    ],
+//                    [
+//                        'name' => 'delete-page',
+//                        'display_name' => 'حذف صفحه',
+//                        'description' => 'توانایی حذف صفحه',
+//                    ],
+//                ]
+//            ],
             //About-Us
             [
                 'title' => 'درباره ما',
@@ -490,17 +332,6 @@ class LaratrustTableSeeder extends Seeder
                         'name' => 'edit-contact',
                         'display_name' => 'ویرایش تماس با ما',
                         'description' => 'توانایی ویرایش تماس با ما',
-                    ]
-                ]
-            ],
-            // Master
-            [
-                'title' => 'استاد',
-                'detail' => [
-                    [
-                        'name' => 'teach',
-                        'display_name' => 'تدریس',
-                        'description' => 'توانایی تدریس',
                     ]
                 ]
             ],

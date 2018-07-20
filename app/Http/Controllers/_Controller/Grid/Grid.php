@@ -101,10 +101,11 @@ class Grid extends Filter
         $this->order = $this->request['order'];
         $this->sort = $this->request['sort'];
 
-        if (!empty($this->sort) && !empty($this->order))
+        if ( ! empty($this->sort) && ! empty($this->order)) {
             return $query->orderBy($this->sort, $this->order);
+        }
 
-        return $query;
+        return $query->latest();
     }
 
 }

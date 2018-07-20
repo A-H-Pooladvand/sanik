@@ -1,5 +1,5 @@
 <?php
 
-Route::group(['prefix' => 'tags', 'as' => 'tag.', 'namespace' => 'Tag'], function () {
-    Route::get('{title?}', 'TagController@index')->name('index');
+Route::group(['prefix' => 'tags', 'as' => 'tag.', 'namespace' => 'Tag\Front'], function () {
+    Route::get('{slug}', 'TagController@index')->name('index');
 });

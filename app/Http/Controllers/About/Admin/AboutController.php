@@ -23,9 +23,10 @@ class AboutController extends Controller
 
     public function update(Request $request)
     {
-        $about = About::findOrFail(1);
+        $about = About::find(1);
         $about->title = $request->title;
         $about->image = $request->image;
+        $about->summary = $request->summary;
         $about->content = $request['content'];
         $about->save();
 

@@ -27,7 +27,6 @@
                         },
                         {field: 'family', sortable: true, title: 'نام خانوادگی', align: 'center'},
                         {field: 'username', sortable: true, title: 'نام کاربری', align: 'center'},
-                        {field: 'mobile', sortable: true, title: 'موبایل', align: 'center'},
                         {
                             field: 'is_active', sortable: true, title: 'وضعیت حساب', align: 'center',
                             formatter: function (val, row) {

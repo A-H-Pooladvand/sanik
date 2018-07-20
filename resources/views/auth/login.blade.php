@@ -2,8 +2,6 @@
 
 @section('content')
 
-    @include('_includes.breadcrumb')
-
     <div class="auth__wrapper">
         <div class="container position-relative">
 
@@ -70,6 +68,5 @@
                 </div>
 
             </form>
-
 
 @endsection

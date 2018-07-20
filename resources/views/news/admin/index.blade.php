@@ -14,7 +14,7 @@
     @push('scripts')
         <script>
             $('#dg').iDataGrid({
-                    title: 'لیست یادداشت و مصاحبه ها',
+                    title: 'لیست اخبار',
                     url: '{{ route('admin.news.items') }}',
                     columns: [[
                         {field: 'checkbox', checkbox: true},

@@ -2,130 +2,85 @@
 
 
 @section('content')
-    <div id="main-content">
 
-        @include('_includes.breadcrumb')
+<main>
+    <div class="page-loader">
+        <div class="loader">Loading...</div>
+    </div>
 
-        <section class="kopa-area">
+    <div class="main">
+        <section class="module">
             <div class="container">
-                <div class="kopa-contact-form">
-                    <div>
-                        {!! $contact->content !!}
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4 class="font-alt">Get in touch</h4><br/>
+                        <form id="contactForm" role="form" method="post" action="{{ route('contact.store') }}">
+                            {{ csrf_field() }}
+
+                            <div class="form-group">
+                                <label class="sr-only" for="name">Name</label>
+                                <input class="form-control" type="text" id="name" name="name" placeholder="Your Name*" required="required" data-validation-required-message="Please enter your name."/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="email">Email</label>
+                                <input class="form-control" type="email" id="email" name="email" placeholder="Your Email*" required="required" data-validation-required-message="Please enter your email address."/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="phone">Phone</label>
+                                <input class="form-control" type="tel" id="phone" name="phone" placeholder="Your Phone*" required="required" data-validation-required-message="Please enter your phone info."/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="sr-only" for="subject">subject</label>
+                                <input class="form-control" type="text" id="subject" name="subject" placeholder="Subject*" required="required" data-validation-required-message="Please enter the subject."/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" rows="7" id="message" name="content" placeholder="Your Message*" required="required" data-validation-required-message="Please enter your message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6"><input class="form-control" type="text" id="captcha" name="captcha" placeholder="captcha code*" required="required" data-validation-required-message="Please enter the captcha."/></div>
+                                    <div class="col-sm-6">{!! captcha_img() !!}</div>
+                                </div>
+
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="text-center">
+                                <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit">Submit</button>
+                            </div>
+
+                        </form>
+                        <div class="ajax-response font-alt" id="contactFormResponse"></div>
                     </div>
-
-                    <hr>
-                    {{--<h2>ارسال پیام</h2>--}}
-
-                    @if (session('message'))
-                        <div class="alert alert-success">
-                            {{ session('message') }}
-                        </div>
-                    @else
-
-                        <div role="form" class="wpcf7">
-
-                            <form method="post" class="wpcf7-form" novalidate="novalidate" action="{{ route('contact.store') }}">
-                                {{ csrf_field() }}
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                            <p>
-                                                <label>
-                                            <span class="name">
-                                                <input type="text" name="name" aria-required="true" aria-invalid="false" placeholder="نام و نام خانوادگی">
-                                                @if ($errors->has('name'))
-                                                    <span class="help-block">
-                                                        <strong>{{ $errors->first('name') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </span>
-                                                </label>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                            <p>
-                                                <label>
-                                            <span class="email">
-                                                <input type="email" name="email" aria-required="true" aria-invalid="false" placeholder="ایمیل">
-                                                @if ($errors->has('email'))
-                                                    <span class="help-block">
-                                                        <strong>{{ $errors->first('email') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </span>
-                                                </label>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                                            <p>
-                                                <label>
-                                            <span class="title">
-                                                <input type="text" name="title" aria-invalid="false" placeholder="موضوع پیام">
-                                                @if ($errors->has('title'))
-                                                    <span class="help-block">
-                                                        <strong>{{ $errors->first('title') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </span>
-                                                </label>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
-                                            <p>
-                                                <label>
-                                            <span class="mobile">
-                                                <input type="text" name="mobile" aria-invalid="false" placeholder="شماره تماس">
-                                                @if ($errors->has('mobile'))
-                                                    <span class="help-block">
-                                                        <strong>{{ $errors->first('mobile') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </span>
-                                                </label>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
-                                            <p>
-                                                <label>
-                                            <span class="content">
-                                                <textarea name="content" cols="40" rows="10" aria-invalid="false" placeholder="پیام شما..."></textarea>
-                                                @if ($errors->has('content'))
-                                                    <span class="help-block">
-                                                        <strong>{{ $errors->first('content') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </span>
-                                                </label>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12">
-                                        <p>
-                                            <input type="submit" value="ارسال پیـــام">
-                                        </p>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                    @endif
-
+                    <div class="col-sm-6">
+                        <h4 class="font-alt">{{ $contact->title }}</h4><br/>
+                        <p>{{ $contact->content }}</p>
+                        {{--<hr/>--}}
+                       {{-- <h4 class="font-alt">Business Hours</h4><br/>
+                        <ul class="list-unstyled">
+                            <li>Mo - Fr: 8am to 6pm</li>
+                            <li>Sa, Su: 10am to 2pm</li>
+                        </ul>--}}
+                    </div>
                 </div>
             </div>
         </section>
+        <section id="map-section">
+            <div id="map"></div>
+        </section>
 
     </div>
+    <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+</main>
 
 @stop

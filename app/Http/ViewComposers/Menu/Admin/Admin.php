@@ -72,7 +72,7 @@ return [
     ],
     // News
     [
-        'title' => 'یادداشت و مصاحبه',
+        'title' => 'اخبار',
         'icon' => 'fa fa-fw fa-diamond',
         'link' => '#',
         'permission' => 'news',
@@ -99,170 +99,61 @@ return [
             ]
         ]
     ],
-    // Audible
+    // Project
     [
-        'title' => 'کوتاه و شنیدنی',
-        'icon' => 'fa fa-fw fa-volume-up',
-        'link' => '#',
-        'permission' => 'audible',
-        'sub' => [
-            [
-                'title' => 'افزودن کوتاه و شنیدنی',
-                'link' => route('admin.audible.create'),
-                'permission' => 'create-audible'
-            ],
-            [
-                'title' => 'لیست کوتاه و شنیدنی ها',
-                'link' => route('admin.audible.index'),
-                'permission' => 'read-audible'
-            ],
-            [
-                'title' => 'افزودن دسته بندی',
-                'link' => route('admin.audible.category.create'),
-                'permission' => 'create-audible|edit-audible'
-            ],
-            [
-                'title' => 'لیست دسته بندی ها',
-                'link' => route('admin.audible.category.index'),
-                'permission' => 'create-audible|edit-news'
-            ]
-        ]
-    ],
-    // Course
-    [
-
-        'title' => 'درس',
+        'title' => 'پروژه ها',
         'icon' => 'fa fa-fw fa-tasks',
         'link' => '#',
-        'permission' => 'course',
+        'permission' => 'project',
         'sub' => [
             [
-                'title' => 'افزودن درس',
-                'link' => route('admin.course.create'),
-                'permission' => 'create-course'
+                'title' => 'افزودن پروژه',
+                'link' => route('admin.project.create'),
+                'permission' => 'create-project'
             ],
             [
-                'title' => 'لیست درس ها',
-                'link' => route('admin.course.index'),
-                'permission' => 'read-course'
+                'title' => 'لیست پروژه ها',
+                'link' => route('admin.project.index'),
+                'permission' => 'read-project'
             ],
             [
                 'title' => 'افزودن دسته بندی',
-                'link' => route('admin.course.category.create'),
-                'permission' => 'create-course|edit-course'
+                'link' => route('admin.project.category.create'),
+                'permission' => 'create-project|edit-project'
             ],
             [
                 'title' => 'لیست دسته بندی ها',
-                'link' => route('admin.course.category.index'),
-                'permission' => 'create-course|edit-course'
+                'link' => route('admin.project.category.index'),
+                'permission' => 'create-project|edit-project'
             ]
         ]
     ],
-    // Term
+    // Album
     [
-
-        'title' => 'دوره',
-        'icon' => 'fa fa-fw fa-calendar-o',
+        'title' => 'آلبوم تصاویر',
+        'icon' => 'fa fa-fw fa-image',
         'link' => '#',
-        'permission' => 'term',
+        'permission' => 'album',
         'sub' => [
             [
-                'title' => 'افزودن دوره',
-                'link' => route('admin.term.create'),
-                'permission' => 'create-term'
+                'title' => 'افزودن آلبوم',
+                'link' => route('admin.album.create'),
+                'permission' => 'create-album'
             ],
             [
-                'title' => 'لیست دوره ها',
-                'link' => route('admin.term.index'),
-                'permission' => 'read-term'
+                'title' => 'لیست آلبوم ها',
+                'link' => route('admin.album.index'),
+                'permission' => 'read-album'
             ],
             [
                 'title' => 'افزودن دسته بندی',
-                'link' => route('admin.term.category.create'),
-                'permission' => 'create-term|edit-term'
+                'link' => route('admin.album.category.create'),
+                'permission' => 'create-album|edit-album'
             ],
             [
                 'title' => 'لیست دسته بندی ها',
-                'link' => route('admin.term.category.index'),
-                'permission' => 'create-term|edit-term'
-            ]
-        ]
-    ],
-    // Meeting
-    [
-
-        'title' => 'نشست',
-        'icon' => 'fa fa-fw fa-calendar-o',
-        'link' => '#',
-        'permission' => 'term',
-        'sub' => [
-            [
-                'title' => 'افزودن نشست',
-                'link' => route('admin.meeting.create'),
-                'permission' => 'create-term'
-            ],
-            [
-                'title' => 'لیست نشست ها',
-                'link' => route('admin.meeting.index'),
-                'permission' => 'read-term'
-            ],
-            [
-                'title' => 'افزودن دسته بندی',
-                'link' => route('admin.meeting.category.create'),
-                'permission' => 'create-term|edit-term'
-            ],
-            [
-                'title' => 'لیست دسته بندی ها',
-                'link' => route('admin.meeting.category.index'),
-                'permission' => 'create-term|edit-term'
-            ]
-        ]
-    ],
-    // Place
-    [
-        'title' => 'اماکن',
-        'icon' => 'fa fa-fw fa-map-marker',
-        'link' => '#',
-        'permission' => 'place',
-        'sub' => [
-            [
-                'title' => 'افزودن مکان',
-                'link' => route('admin.place.create'),
-                'permission' => 'create-place'
-            ],
-            [
-                'title' => 'لیست اماکن',
-                'link' => route('admin.place.index'),
-                'permission' => 'read-place'
-            ]
-        ]
-    ],
-    // Event
-    [
-        'title' => 'برنامه های آتی',
-        'icon' => 'fa fa-fw fa-calendar',
-        'link' => '#',
-        'permission' => 'event',
-        'sub' => [
-            [
-                'title' => 'افزودن مطلب',
-                'link' => route('admin.event.create'),
-                'permission' => 'create-event'
-            ],
-            [
-                'title' => 'لیست مطالب',
-                'link' => route('admin.event.index'),
-                'permission' => 'read-event'
-            ],
-            [
-                'title' => 'افزودن دسته بندی',
-                'link' => route('admin.event.category.create'),
-                'permission' => 'create-event|edit-event'
-            ],
-            [
-                'title' => 'لیست دسته بندی ها',
-                'link' => route('admin.event.category.index'),
-                'permission' => 'create-event|edit-event'
+                'link' => route('admin.album.category.index'),
+                'permission' => 'create-album|edit-album'
             ]
         ]
     ],
@@ -286,34 +177,7 @@ return [
 //        ]
 //    ],
     // Book
-    [
-        'title' => 'کتاب',
-        'icon' => 'fa fa-fw fa-book',
-        'link' => '#',
-        'permission' => 'book',
-        'sub' => [
-            [
-                'title' => 'افزودن کتاب',
-                'link' => route('admin.book.create'),
-                'permission' => 'create-book'
-            ],
-            [
-                'title' => 'لیست کتاب ها',
-                'link' => route('admin.book.index'),
-                'permission' => 'read-book'
-            ],
-            [
-                'title' => 'افزودن دسته بندی',
-                'link' => route('admin.book.category.create'),
-                'permission' => 'create-book|edit-book'
-            ],
-            [
-                'title' => 'لیست دسته بندی ها',
-                'link' => route('admin.book.category.index'),
-                'permission' => 'create-book|edit-book'
-            ]
-        ]
-    ],
+
     // Tags
     [
 

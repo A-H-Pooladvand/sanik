@@ -12,15 +12,8 @@ class AboutController extends Controller
     {
         $about = About::find(1);
 
-        $this->seo()->setTitle('درباره استاد');
+        $this->seo()->setTitle('About us - SANIK GROUP');
         $this->seo()->setDescription($about->content);
-
-        $this->setBreadcrumb([
-            [
-                'title' => 'درباره استاد',
-            ],
-        ]);
-
 
         return view('about.front.show', compact('about'));
     }

@@ -23,7 +23,8 @@ class ContactUsController extends Controller
 
     public function update(Request $request)
     {
-        $contact = ContactUs::findOrFail(1);
+        $contact = ContactUs::find(1);
+        $contact->title = $request->title;
         $contact->content = $request['content'];
         $contact->save();
 

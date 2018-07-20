@@ -14,7 +14,7 @@
 
         <tr>
             <th>تصویر کاربری</th>
-            <td><img src="{{ $user['avatar'] }}" class="img-circle" width="150" height="150" alt="{{ $user->fullName() }}" title="{{ $user->fullName() }}"></td>
+            <td><img src="{{ image_url($user['avatar'], 15,15, true) }}" class="img-circle" width="150" height="150" alt="{{ $user->fullName() }}" title="{{ $user->fullName() }}"></td>
         </tr>
 
         <tr>
@@ -25,11 +25,6 @@
         <tr>
             <th>نام خانوادگی</th>
             <td>{{ $user['family'] }}</td>
-        </tr>
-
-        <tr>
-            <th>نام کاربری</th>
-            <td>{{ $user['username'] }}</td>
         </tr>
 
         <tr>
@@ -54,16 +49,6 @@
             </tr>
 
         @endif
-
-        <tr>
-            <th>تلفن همراه</th>
-            <td>{{ $user['mobile'] }}</td>
-        </tr>
-
-        <tr>
-            <th>تلفن تماس</th>
-            <td>{{ $user['phone'] }}</td>
-        </tr>
 
         <tr>
             <th>تاریخ ایجاد حساب</th>
