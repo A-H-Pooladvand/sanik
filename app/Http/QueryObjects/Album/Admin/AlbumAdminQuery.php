@@ -28,7 +28,7 @@ class AlbumAdminQuery
             'title' => 'required|max:100',
             'image' => 'required',
 //            'summary' => 'required|max:250',
-            'content' => 'required'
+//            'content' => 'required'
         ];
 
 
@@ -44,7 +44,6 @@ class AlbumAdminQuery
             'user_id' => Auth::id(),
             'title' => $this->request->title,
             'image' => empty($this->request->image) ? $album->image : $this->request->image,
-            'description' => $this->request['content'],
         ];
     }
 }

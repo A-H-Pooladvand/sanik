@@ -1,6 +1,7 @@
 <?php
 
 use App\Album;
+use App\Category;
 use App\News;
 use App\Project;
 use Illuminate\Database\Eloquent\Builder;
@@ -33,6 +34,19 @@ return [
 
     'latest_albums' => Cache::remember('_footer_albums', 1, function () {
         return Album::latest()->take(5)->get();
-    })
+    }),
+
+    'front_menu' => [
+        [
+            'title' => 'News',
+            'link' => route('news.index'),
+            'sub' => Category::where('category_type', News::class)->get()->map(function (Category $item) {
+                return [
+                    'title' => $item->title,
+                    'link' => route('category.index', ['id' => $item->id, 'title' => $item->slug])
+                ];
+            })
+        ]
+    ]
 
 ];

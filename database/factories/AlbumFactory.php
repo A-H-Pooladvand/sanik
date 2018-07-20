@@ -10,6 +10,5 @@ $factory->define(Album::class, function (Faker $faker) use ($factory) {
         'user_id' => $faker->randomElement(User::pluck('id')->toArray()),
         'title' => $faker->realText(40),
         'image' => 'files/_test/' . rand(1, 10) . '.jpg',
-        'description' => $faker->realText(500),
     ];
 });

@@ -3,72 +3,49 @@
 
 @section('content')
 
+    <main>
+        <div class="page-loader">
+            <div class="loader">Loading...</div>
+        </div>
 
-    <div id="main-content">
+        <div class="main">
+            <section class="module">
+                <div class="container">
+                    <div class="row multi-columns-row post-columns">
 
-        @include('_includes.breadcrumb')
+                        @foreach($news as $item)
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <div class="post">
 
-        <section class="kopa-area kopa-area-16">
-            <div class="container">
-                <div class="widget kopa-widget-news">
-                    <div class="widget-content module-news-05">
-                        <div class="row">
-                            <div class="col-md-9 col-sm-9 col-xs-12">
-                                <div class="row">
+                                    <div class="post-thumbnail">
+                                        <a href="{{ route('news.show', $item->id) }}">
+                                            <img class="img-rounded" src="{{ image_url($item->image, 36, 20, true) }}" alt="Blog-post Thumbnail"/>
+                                        </a>
+                                    </div>
 
-                                    @foreach($news as $item)
-                                        <div class="col-md-4 col-sm-6 col-xs-12">
-                                            <article class="list-interviews entry-item  kopa-item-01">
-                                                <div class="entry-thumb">
-                                                    <a href="{{ route('news.show', [$item->id, str_slug_fa($item->title)]) }}">
-                                                        <img src="{{ image_url($item->image,36,25,true) }}"
-                                                             alt="{{ $item->title }}" title="{{ $item->title }}">
-                                                    </a>
-                                                </div>
-                                                <div class="entry-content">
-                                                    <h4 class="entry-title">
-                                                        <a href="{{ route('news.show', [$item->id, str_slug_fa($item->title)]) }}">{{ $item->title }}</a>
-                                                    </h4>
-                                                    {{--<div class="entry-meta">--}}
-                                                        {{--<a href="{{ route('news.show', [$item->id, str_slug_fa($item->title)]) }}">--}}
-                                                            {{--<small>{{ jdate($item->created_at)->format('d %B Y') }}</small>--}}
-                                                        {{--</a>--}}
-                                                    {{--</div>--}}
-                                                    {{--<p>{{ $item->summary }}</p>--}}
-                                                </div>
-                                            </article>
+                                    <div class="post-header font-alt">
+                                        <h2 class="post-title"><a href="{{ route('news.show', $item->id) }}">{{ $item->title }}</a></h2>
+                                        <div class="post-meta">{{ $item->created_at->format('d-m-Y') }}
                                         </div>
-                                    @endforeach
-
-                                </div>
-
-                                <div class="text-center">
-
-                                    {{ $news->links() }}
-
+                                    </div>
+                                    <div class="post-entry">
+                                        <p>{{ str_limit($item->summary, 250) }}</p>
+                                    </div>
+                                    <div class="post-more"><a class="more-link" href="{{ route('news.show', $item->id) }}">Read more</a></div>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-3 col-xs-12">
+                        @endforeach
 
-                                <aside class="sidebar">
-
-                                    <section class="widget widget_categories">
-                                        <h2 class="widget-title">دسته بندی ها</h2>
-                                        <ul>
-                                            @component('_components.show_courses_leftside', ['data' => App\News::getCategories(), 'module' => 'category'])
-                                            @endcomponent
-                                        </ul>
-                                    </section>
-
-                                </aside>
-
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-    </div>
+                    <div class="text-center">
+                        {{ $news->links() }}
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
 
 @stop

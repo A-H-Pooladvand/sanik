@@ -6,21 +6,15 @@ use App\Http\Controllers\Controller;
 use App\News;
 use Cache;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
     public function index(Request $request)
     {
-        $this->setBreadcrumb([
-            [
-                'title' => 'یادداشت و مصاحبه',
-                'link' => route('news.index'),
-            ]
-        ]);
-
-        $this->seo()->setTitle('یادداشت و مصاحبه');
-        $this->seo()->setDescription('یادداشت و مصاحبه');
+        $this->seo()->setTitle('News');
+        $this->seo()->setDescription('SANIK GROUP latest news');
 
         $page = $request->has('page') ? $request->query('page') : 1;
         $news = Cache::remember("_front_news_index_{$page}", 1, function () {
@@ -32,9 +26,7 @@ class NewsController extends Controller
                 ->where(function ($news) use ($now) {
                     $news->whereNull('expire_at')
                         ->orWhere('expire_at', '>=', $now);
-                })
-//                ->where('expire_at', '>=', Carbon::now())
-                ->paginate(9, ["id", "title", /*"summary", */"image", "created_at"]);
+                })->paginate(9, ["id", "title", "summary", "image", "created_at"]);
         });
 
         return view('news.front.index', compact('news'));
@@ -44,17 +36,16 @@ class NewsController extends Controller
     {
         $now = Carbon::now();
 
-        $news = News::with('tags', 'categories', 'galleries', 'files')
+        $news = News::with('tags', 'galleries', 'files')
             ->where('status', 'publish')
             ->where('publish_at', '<=', $now)
-            ->where(function ($news) use ($now) {
-                $news->whereNull('expire_at')
-                    ->orWhere('expire_at', '>=', $now);
-            })
-//            ->where('expire_at', '>=', Carbon::now())
-            ->findOrFail($id);
+            ->where(function (Builder $news) use ($now) {
+                $news->whereNull('expire_at')->orWhere('expire_at', '>=', $now);
+            })->find($id);
 
-        $latest_news = News::latest()
+        $categories = $news->categories()->latest()->take(5)->get(['id', 'title']);
+
+        $latestNews = News::latest()
             ->where('status', 'publish')
             ->where('publish_at', '<=', Carbon::now())
             ->where('expire_at', '>=', Carbon::now())
@@ -64,17 +55,6 @@ class NewsController extends Controller
         $this->seo()->setTitle($news->title);
         $this->seo()->setDescription($news->description);
 
-        $this->setBreadcrumb([
-            [
-                'title' => 'یادداشت و مصاحبه',
-                'link' => route('news.index'),
-            ],
-            [
-                'title' => $news->title,
-                'link' => '#',
-            ],
-        ]);
-
-        return view('news.front.show', compact('news', 'latest_news'));
+        return view('news.front.show', compact('news', 'latestNews', 'categories'));
     }
 }

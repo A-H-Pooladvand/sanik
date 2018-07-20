@@ -19,34 +19,17 @@ class Tag extends Model
         return $this->morphedByMany(News::class, 'taggable');
     }
 
-    public function audibles()
+    /**
+     * Get all of the projects that are assigned this tag.
+     */
+    public function projects()
     {
-        return $this->morphedByMany(Audible::class, 'taggable');
-    }
-
-    public function terms()
-    {
-        return $this->morphedByMany(Term::class, 'taggable');
-    }
-
-    public function events()
-    {
-        return $this->morphedByMany(Event::class, 'taggable');
+        return $this->morphedByMany(Project::class, 'taggable');
     }
 
     public function pages()
     {
         return $this->morphedByMany(Page::class, 'taggable');
-    }
-
-    public function books()
-    {
-        return $this->morphedByMany(Book::class, 'taggable');
-    }
-
-    public function meetings()
-    {
-        return $this->morphedByMany(Meeting::class, 'taggable');
     }
 
     public function setTitleAttribute($value)

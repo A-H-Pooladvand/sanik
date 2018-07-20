@@ -10,7 +10,6 @@
 <body class="text-justify" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
 
 <div id="main-container">
-
     @include('_layouts.front.includes.header')
 </div>
 

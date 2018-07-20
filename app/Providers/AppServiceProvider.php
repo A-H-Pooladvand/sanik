@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('_layouts.admin.includes.sidebar', 'App\Http\ViewComposers\Menu\Admin\Render');
         View::composer('_layouts.front.includes.header', 'App\Http\ViewComposers\Front\ActiveMenuComposer');
         View::composer('_layouts.front.includes.footer', 'App\Http\ViewComposers\Front\Render');
+        View::composer('_layouts.front.includes.header', 'App\Http\ViewComposers\Front\HeaderRender');
 
         Blade::directive('script', function ($expression) {
             return "<?php \$__env->startPush('page-scripts'); ?>

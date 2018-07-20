@@ -12,7 +12,7 @@ class AboutController extends Controller
     {
         $about = About::find(1);
 
-        $this->seo()->setTitle('About us - Sanik-Group');
+        $this->seo()->setTitle('About us - SANIK GROUP');
         $this->seo()->setDescription($about->content);
 
         return view('about.front.show', compact('about'));

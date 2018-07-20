@@ -18,7 +18,6 @@ class CreateAlbumsTable extends Migration
             $table->unsignedMediumInteger('user_id');
             $table->string('title', 150);
             $table->string('image', 191);
-            $table->text('description');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');

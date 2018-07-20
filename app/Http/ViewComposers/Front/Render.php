@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Amirhossein
- * Date: 2/6/2018
- * Time: 11:14 PM
- */
 
 namespace App\Http\ViewComposers\Front;
 

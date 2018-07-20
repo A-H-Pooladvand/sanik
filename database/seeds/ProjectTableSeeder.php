@@ -15,9 +15,9 @@ class ProjectTableSeeder extends Seeder
     public function run()
     {
         // Seed projects with categories and tags.
-        factory(Project::class, 50)->create()->each(function (Project $project) {
+        factory(Project::class, 20)->create()->each(function (Project $project) {
 
-            $categories = factory(Category::class, rand(2, 4))->create(['category_type' => Project::class])->pluck('id');
+            $categories = factory(Category::class, rand(1, 2))->create(['category_type' => Project::class])->pluck('id');
             $tags = factory(Tag::class, rand(2, 4))->create()->pluck('id');
 
             $project->tags()->attach($tags);

@@ -14,12 +14,6 @@
                     <input id="input_title" name="title" type="text" class="form-control" value="{{ $album->title ?? '' }}">
                 </div>
 
-                <div class="form-group">
-                    @script(tinymce/tinymce.js)
-                    <label for="input_content" class="control-label">محتوا</label>
-                    <textarea name="content" id="input_content" class="tinymce">{{ $album->description ?? '' }}</textarea>
-                </div>
-
             </div>
 
             <div class="col-sm-4">

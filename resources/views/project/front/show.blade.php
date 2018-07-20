@@ -3,117 +3,83 @@
 
 @section('content')
 
-    <div id="main-content">
+    <main>
+        <div class="page-loader">
+            <div class="loader">Loading...</div>
+        </div>
+        <div class="main">
+            <section class="module-small">
+                <div class="container">
+                    <div class="row">
 
-        @include('_includes.breadcrumb')
-
-        <section class="kopa-area ">
-
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-
-                        <div class="single-content">
-
-                            <h1 class="single-post-title">{{ $news->title }}</h1>
-
-                            <div class="entry-meta">
-                                <i class="fa fa-calendar"></i>
-                                <a href="#">{{ jdate($news->created_at)->format('d %B Y') }}</a>
-                            </div>
-
-                            <div class="single-post-img">
-                                <img src="{{ image_url($news->image,66,37, true) }}" alt="{{ $news->title }}" title="{{ $news->title }}">
-                                <div class="entry-date style-01">
-                                    <span>{{ jdate($news->created_at)->format('d') }}</span>
-                                    <p>{{ jdate($news->created_at)->format('Y/m') }}</p>
+                        <div class="col-sm-8">
+                            <div class="post">
+                                <div class="post-thumbnail">
+                                    <img src="{{ image_url($project->image, 75, 42, true) }}" class="img-rounded" alt="Blog Featured Image"/>
+                                </div>
+                                <div class="post-header font-alt">
+                                    <h1 class="post-title">{{ $project->title }}</h1>
+                                    <h5>{{ $project->summary }}</h5>
+                                    <div class="post-meta">{{ $project->created_at->format('Y-d-m') }}
                                 </div>
                             </div>
-
-
-                            <div class="single-content-detail">
-
-                                @include('_includes.share')
-
-                                <div class="right-content">
-                                    <h5>{{ $news->summary }}</h5>
-                                    <p>{!! $news->content !!}</p>
-
-                                    @component('_components.show_tags', ['tags' => $news->tags])
-                                    @endcomponent
-
-                                </div>
+                            <div class="post-entry">
+                                <p>{{ $project->content }}</p>
                             </div>
-
-                            @if(! $news->galleries->isEmpty())
-
-                                @foreach($news->galleries as $gallery)
-
-                                    <img src="{{ image_url($gallery->path) }}" alt="{{ $gallery->path }}" title="{{ $gallery->path }}">
-
-                                @endforeach
-
-                            @endif
-
                         </div>
-
                     </div>
 
-                    <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
 
-                        <aside class="sidebar">
+                        <div class="widget">
+                            <h5 class="widget-title font-alt">Categories</h5>
+                            <ul class="icon-list">
+                                @foreach($categories as $category)
+                                    <li><a href="{{ route('category.index', ['id' => $category->id, 'title' => $category->slug]) }}">{{ $category->title }}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
 
-                            <section class="widget widget_categories">
-                                <h2 class="widget-title">دسته بندی ها</h2>
-                                <ul>
-                                    @component('_components.show_courses_leftside', ['data' => $news->categories, 'module' => 'category'])
-                                    @endcomponent
-                                </ul>
-                            </section>
-
-                            @if(! $latest_news->isEmpty())
-                                <section class="widget widget_recent_entries">
-
-                                    <h2 class="widget-title">آخرین اخبار</h2>
-
-                                    <ul>
-                                        @if(! $latest_news->isEmpty())
-                                            @foreach($latest_news as $latest)
-                                                <li>
-                                                    <article class="entry-item">
-                                                        <div class="entry-item">
-                                                            <div class="entry-thumb">
-                                                                <a href="{{ route('news.show', [$latest->id, str_slug_fa($latest->title)]) }}"><img src="{{ image_url($latest->image,6,4,true) }}" alt="{{ $latest->title }}" title="{{ $latest->title }}"></a>
-                                                            </div>
-                                                            <div class="entry-content">
-                                                                <h4 class="entry-title">
-                                                                    <a href="{{ route('news.show', [$latest->id, str_slug_fa($latest->title)]) }}">{{ $latest->title }}</a>
-                                                                </h4>
-                                                                <a href="{{ route('news.show', [$latest->id, str_slug_fa($latest->title)]) }}">{{ jdate($news->created_at)->format('d %B Y') }}</a>
-                                                            </div>
-                                                        </div>
-                                                    </article>
-                                                </li>
-                                            @endforeach
-                                        @endif
-
-                                    </ul>
-
-                                </section>
-                            @endif
-
-                        </aside>
-
+                        <div class="widget">
+                            <h5 class="widget-title font-alt">Latest Projects</h5>
+                            <ul class="widget-posts">
+                                @foreach($latestProjects as $latestProject)
+                                    <li class="clearfix">
+                                        <div class="widget-posts-image">
+                                            <a href="{{ route('news.show', $latestProject->id) }}">
+                                                <img src="{{ image_url($latestProject->image, 6, 3, true) }}" alt="Post Thumbnail"/>
+                                            </a>
+                                        </div>
+                                        <div class="widget-posts-body">
+                                            <div class="widget-posts-title">
+                                                <a href="{{ route('news.show', $latestProject->id) }}">
+                                                    {{ str_limit($latestProject->title, 25) }}
+                                                </a>
+                                            </div>
+                                            <div class="widget-posts-meta">{{ $latestProject->created_at->format('d F') }}</div>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @if(!empty($project->tags))
+                            <div class="widget">
+                                <h5 class="widget-title font-alt">Tag</h5>
+                                <div class="tags font-serif">
+                                    @foreach($project->tags as $tag)
+                                        <a href="{{ route('tag.index', $tag->slug) }}" rel="tag">{{ $tag->title }}</a>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
                     </div>
 
                 </div>
+                </div>
 
-            </div>
-
-        </section>
-
-    </div>
+            </section>
+        </div>
+        <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
 
 @stop

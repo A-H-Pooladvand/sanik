@@ -1,5 +1,5 @@
 @if(isset($data) && count($data))
-    <h4>یادداشت و نوشته ها</h4>
+    <h4 class="text-uppercase">Company latest news</h4>
     <hr>
     <div class="row">
         @foreach($data as $item)

@@ -1,3 +1,7 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Titan | Multipurpose HTML5 Template</title>
 <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets_front/images/favicons/apple-icon-57x57.png') }}">
 <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets_front/images/favicons/apple-icon-60x60.png') }}">
 <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets_front/images/favicons/apple-icon-72x72.png') }}">
@@ -16,9 +20,10 @@
 <meta name="msapplication-TileImage" content="{{ asset('assets_front/images/favicons/ms-icon-144x144.png') }}">
 <meta name="theme-color" content="#ffffff">
 <link href="{{ asset('assets_front/lib/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+{{--<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">--}}
+{{--<link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">--}}
+{{--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">--}}
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <link href="{{ asset('assets_front/lib/animate.css/animate.css') }}" rel="stylesheet">
 <link href="{{ asset('assets_front/lib/components-font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 <link href="{{ asset('assets_front/lib/et-line-font/et-line-font.css') }}" rel="stylesheet">

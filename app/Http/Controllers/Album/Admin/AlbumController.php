@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Album\Admin;
 
+use DB;
 use App\Album;
 use App\Category;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\Category\JEasyUi;
 use App\Http\Helpers\Multimedia\Multimedia;
 use App\Http\QueryObjects\Album\Admin\AlbumAdminQuery;
-use DB;
-use Illuminate\Http\Request;
 
 class AlbumController extends Controller
 {

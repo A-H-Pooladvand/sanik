@@ -37,23 +37,26 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
-                            <h2 class="module-title font-alt">latest projects</h2>
-                            {{--<div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>--}}
+                            <h2 class="module-title font-alt">company news</h2>
                         </div>
 
-                        @foreach($projects as $item)
+                        @foreach($news as $item)
                             <div class="col-sm-6 col-md-4 col-lg-4">
                                 <div class="post mb-20">
-                                    <div class="post-thumbnail"><a href="#"><img src="{{ image_url($item->image, 80,46,true) }}" alt="{{ $item->title }}"/></a></div>
+                                    <div class="post-thumbnail">
+                                        <a href="{{ route('news.show', $item->id) }}">
+                                            <img src="{{ image_url($item->image, 80,46,true) }}" alt="{{ $item->title }}"/>
+                                        </a>
+                                    </div>
                                     <div class="post-header font-alt">
-                                        <h2 class="post-title"><a href="#">{{ $item->title }}</a></h2>
-                                        <div class="post-meta">{{--By&nbsp;<a href="#">{{ $item->summary }}</a>&nbsp;|--}} {{ $item->created_at->format('d-m-Y') }}
+                                        <h2 class="post-title"><a href="{{ route('news.show', $item->id) }}">{{ $item->title }}</a></h2>
+                                        <div class="post-meta"></a>{{ $item->created_at->format('d-m-Y') }}
                                         </div>
                                     </div>
                                     <div class="post-entry">
                                         <p>{{ $item->summary }}</p>
                                     </div>
-                                    <div class="post-more"><a class="more-link" href="#">Read more</a></div>
+                                    <div class="post-more"><a class="more-link" href="{{ route('news.show', $item->id) }}">Read more</a></div>
                                 </div>
                             </div>
                         @endforeach
@@ -66,23 +69,22 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
-                            <h2 class="module-title font-alt">company news</h2>
-                            {{--<div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>--}}
+                            <h2 class="module-title font-alt">latest projects</h2>
                         </div>
 
-                        @foreach($news as $item)
+                        @foreach($projects as $item)
                             <div class="col-sm-6 col-md-4 col-lg-4">
                                 <div class="post mb-20">
-                                    <div class="post-thumbnail"><a href="#"><img src="{{ image_url($item->image, 80,46,true) }}" alt="{{ $item->title }}"/></a></div>
+                                    <div class="post-thumbnail"><a href="{{ route('project.show', $item->id) }}"><img src="{{ image_url($item->image, 80,46,true) }}" alt="{{ $item->title }}"/></a></div>
                                     <div class="post-header font-alt">
-                                        <h2 class="post-title"><a href="#">{{ $item->title }}</a></h2>
-                                        <div class="post-meta">{{--By&nbsp;<a href="#">{{ $item->summary }}</a>&nbsp;|--}} {{ $item->created_at->format('d-m-Y') }}
+                                        <h2 class="post-title"><a href="{{ route('project.show', $item->id) }}">{{ $item->title }}</a></h2>
+                                        <div class="post-meta">{{ $item->created_at->format('d-m-Y') }}
                                         </div>
                                     </div>
                                     <div class="post-entry">
                                         <p>{{ $item->summary }}</p>
                                     </div>
-                                    <div class="post-more"><a class="more-link" href="#">Read more</a></div>
+                                    <div class="post-more"><a class="more-link" href="{{ route('project.show', $item->id) }}">Read more</a></div>
                                 </div>
                             </div>
                         @endforeach
@@ -104,7 +106,8 @@
                 <ul class="works-grid works-grid-gut works-grid-3 works-hover-w" id="works-grid">
 
                     @foreach($albums as $album)
-                        <li class="work-item illustration webdesign"><a href="#">
+                        <li class="work-item illustration webdesign">
+                            <a href="{{ route('album.show', $album->id) }}">
                                 <div class="work-image"><img alt="{{ $album->title }}" src={{ image_url($album->image, 56,31, true) }} /></div>
                                 <div class="work-caption font-alt">
                                     <h3 class="work-title">{{ $album->title }}</h3>

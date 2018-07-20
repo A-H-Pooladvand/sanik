@@ -16,9 +16,9 @@ class KalaamTableSeeder extends Seeder
     public function run()
     {
         // Seed News with category
-        factory(News::class, 50)->create()->each(function (News $item) {
+        factory(News::class, 20)->create()->each(function (News $item) {
 
-            $categories = factory(Category::class, rand(2, 4))->create(['category_type' => News::class])->pluck('id');
+            $categories = factory(Category::class, rand(1,2))->create(['category_type' => News::class])->pluck('id');
             $tags = factory(Tag::class, rand(2, 4))->create()->pluck('id');
 
             $item->tags()->attach($tags);

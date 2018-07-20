@@ -1,8 +1,7 @@
 .btn {
 	border-radius: 0;
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: "Source Sans Pro", sans-serif;
 	text-transform: uppercase;
-	letter-spacing: 2px;
 	font-size: 11px;
 	padding: 8px 37px;
 }
@@ -115,13 +114,11 @@
 .btn.btn-sm {
 	padding: 6px 25px;
 	font-size: 10px;
-	letter-spacing: 1px;
 }
 
 .btn.btn-xs {
 	padding: 4px 19px;
 	font-size: 10px;
-	letter-spacing: 0;
 }
 
 .btn-list .btn {

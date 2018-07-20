@@ -16,8 +16,8 @@ class MainController extends Controller
     public function show(Request $request)
     {
 
-        $this->seo()->setTitle('Sanik-Group');
-        $this->seo()->setDescription('Sanik-Group');
+        $this->seo()->setTitle('SANIK GROUP');
+        $this->seo()->setDescription('SANIK GROUP');
 
         $sliders = Cache::remember('_front_sliders', 1, function () {
             return Slider::latest()->take(5)->get(['title', 'image', 'description', 'link']);
