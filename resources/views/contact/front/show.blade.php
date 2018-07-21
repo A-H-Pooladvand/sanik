@@ -75,9 +75,9 @@
                 </div>
             </div>
         </section>
-        <section id="map-section">
+       {{-- <section id="map-section">
             <div id="map"></div>
-        </section>
+        </section>--}}
 
     </div>
     <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
