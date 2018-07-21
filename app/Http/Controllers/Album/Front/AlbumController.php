@@ -10,9 +10,7 @@ class AlbumController extends Controller
 {
     public function index()
     {
-        $albums = Cache::remember('_front_albums', 1, function () {
-            return Album::latest()->paginate(10);
-        });
+        $albums = Album::latest()->paginate(10);
 
         return view('album.front.index', compact('albums'));
     }
