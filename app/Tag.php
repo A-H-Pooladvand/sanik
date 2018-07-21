@@ -26,6 +26,13 @@ class Tag extends Model
     {
         return $this->morphedByMany(Project::class, 'taggable');
     }
+    /**
+     * Get all of the projects that are assigned this tag.
+     */
+    public function albums()
+    {
+        return $this->morphedByMany(Album::class, 'taggable');
+    }
 
     public function pages()
     {

@@ -19,13 +19,11 @@ class NewsController extends Controller
         $page = $request->has('page') ? $request->query('page') : 1;
         $news = Cache::remember("_front_news_index_{$page}", 1, function () {
 
-            $now = Carbon::now();
             return News::latest()
                 ->where('status', 'publish')
                 ->where('publish_at', '<=', Carbon::now())
-                ->where(function ($news) use ($now) {
-                    $news->whereNull('expire_at')
-                        ->orWhere('expire_at', '>=', $now);
+                ->where(function (Builder $news) {
+                    $news->whereNull('expire_at')->orWhere('expire_at', '>=', now());
                 })->paginate(9, ["id", "title", "summary", "image", "created_at"]);
         });
 
@@ -34,13 +32,11 @@ class NewsController extends Controller
 
     public function show($id)
     {
-        $now = Carbon::now();
-
         $news = News::with('tags', 'galleries', 'files')
             ->where('status', 'publish')
-            ->where('publish_at', '<=', $now)
-            ->where(function (Builder $news) use ($now) {
-                $news->whereNull('expire_at')->orWhere('expire_at', '>=', $now);
+            ->where('publish_at', '<=', now())
+            ->where(function (Builder $news) {
+                $news->whereNull('expire_at')->orWhere('expire_at', '>=', now());
             })->find($id);
 
         $categories = $news->categories()->latest()->take(5)->get(['id', 'title']);

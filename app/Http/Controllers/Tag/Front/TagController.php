@@ -5,9 +5,8 @@ namespace App\Http\Controllers\Tag\Front;
 use App\News;
 use App\Tag;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Builder;
 
 class TagController extends Controller
 {
@@ -34,7 +33,8 @@ class TagController extends Controller
                     ->orWhere('expire_at', '>=', now());
             })->get(["id", "title", "summary", "image", "created_at"]);
 
-        return view('tag.front.index', compact('tag', 'news', 'projects'));
+        $albums = $tag->albums()->get();
 
+        return view('tag.front.index', compact('tag', 'news', 'projects', 'albums'));
     }
 }

@@ -1,13 +1,11 @@
 <?php
 
-use App\Album;
-use App\Category;
 use App\News;
+use App\Album;
 use App\Project;
-use Illuminate\Database\Eloquent\Builder;
+use App\Category;
 
 return [
-
     'front_menu' => [
         [
             'title' => 'News',
@@ -15,7 +13,7 @@ return [
             'sub' => Category::where('category_type', News::class)->get()->map(function (Category $item) {
                 return [
                     'title' => $item->title,
-                    'link' => route('category.index', ['id' => $item->id, 'title' => $item->slug])
+                    'link' => route('category.index', $item->id)
                 ];
             })
         ],
@@ -25,17 +23,17 @@ return [
             'sub' => Category::where('category_type', Project::class)->get()->map(function (Category $item) {
                 return [
                     'title' => $item->title,
-                    'link' => route('category.index', ['id' => $item->id, 'title' => $item->slug])
+                    'link' => route('category.index', $item->id)
                 ];
             })
         ],
         [
             'title' => 'Albums',
-            'link' => route('project.index'),
+            'link' => route('album.index'),
             'sub' => Category::where('category_type', Album::class)->get()->map(function (Category $item) {
                 return [
                     'title' => $item->title,
-                    'link' => route('category.index', ['id' => $item->id, 'title' => $item->slug])
+                    'link' => route('category.index', $item->id)
                 ];
             })
         ],
@@ -48,5 +46,4 @@ return [
             'link' => route('contact.show'),
         ]
     ]
-
 ];

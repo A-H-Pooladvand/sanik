@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Project\Front;
 
-use App\Project;
 use Cache;
-use Illuminate\Database\Eloquent\Builder;
+use App\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Builder;
 
 class ProjectController extends Controller
 {
@@ -17,13 +17,11 @@ class ProjectController extends Controller
 
         $page = $request->has('page') ? $request->query('page') : 1;
         $projects = Cache::remember("_front_project_index_{$page}", 1, function () {
-
             return Project::latest()
                 ->where('status', 'publish')
                 ->where('publish_at', '<=', now())
                 ->where(function (Builder $project) {
-                    $project->whereNull('expire_at')
-                        ->orWhere('expire_at', '>=', now());
+                    $project->whereNull('expire_at')->orWhere('expire_at', '>=', now());
                 })->paginate(10, ["id", "title", "summary", "image", "created_at"]);
         });
 

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Main\Front;
 
-use App\Album;
-use App\Http\Controllers\Controller;
-use App\News;
-use App\Project;
-use App\Slider;
 use Cache;
-use Illuminate\Database\Eloquent\Builder;
+use App\News;
+use App\Album;
+use App\Slider;
+use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
+use App\Http\Controllers\Controller;
 
 class MainController extends Controller
 {
@@ -42,9 +42,7 @@ class MainController extends Controller
                 ->where('publish_at', '<=', now())
                 ->where(function (Builder $news) {
                     $news->whereNull('expire_at')->orWhere('expire_at', '>=', now());
-                })
-                ->take(3)
-                ->get(['id', 'title', 'summary', 'image', 'created_at']);
+                })->take(3)->get(['id', 'title', 'summary', 'image', 'created_at']);
         });
 
         $albums = Cache::remember('_front_albums', 1, function () {

@@ -14,7 +14,7 @@
                 <ul class="slides">
 
                     @foreach($sliders as $slider)
-                        <li class="bg-dark" style="background-image:url({{ image_url($slider->image) }});">
+                        <li class="bg-dark" style="background-image:url({{ image_url($slider->image, 192,108) }});">
                             <div class="container">
                                 <div class="image-caption">
                                     <div class="font-alt caption-text">
@@ -37,7 +37,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
-                            <h2 class="module-title font-alt">company news</h2>
+                            <h2 class="module-title font-alt">
+                                <strong>company news</strong>
+                            </h2>
                         </div>
 
                         @foreach($news as $item)
@@ -45,12 +47,12 @@
                                 <div class="post mb-20">
                                     <div class="post-thumbnail">
                                         <a href="{{ route('news.show', $item->id) }}">
-                                            <img src="{{ image_url($item->image, 80,46,true) }}" alt="{{ $item->title }}"/>
+                                            <img class="img-rounded" src="{{ image_url($item->image, 36,20,true) }}" alt="{{ $item->title }}"/>
                                         </a>
                                     </div>
                                     <div class="post-header font-alt">
                                         <h2 class="post-title"><a href="{{ route('news.show', $item->id) }}">{{ $item->title }}</a></h2>
-                                        <div class="post-meta"></a>{{ $item->created_at->format('d-m-Y') }}
+                                        <div class="post-meta">{{ $item->created_at->format('d-m-Y') }}
                                         </div>
                                     </div>
                                     <div class="post-entry">
@@ -69,13 +71,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
-                            <h2 class="module-title font-alt">latest projects</h2>
+                            <h2 class="module-title font-alt">
+                                <strong>latest projects</strong>
+                            </h2>
                         </div>
 
                         @foreach($projects as $item)
                             <div class="col-sm-6 col-md-4 col-lg-4">
                                 <div class="post mb-20">
-                                    <div class="post-thumbnail"><a href="{{ route('project.show', $item->id) }}"><img src="{{ image_url($item->image, 80,46,true) }}" alt="{{ $item->title }}"/></a></div>
+                                    <div class="post-thumbnail"><a href="{{ route('project.show', $item->id) }}">
+                                            <img class="img-rounded" src="{{ image_url($item->image, 36,20,true) }}" alt="{{ $item->title }}"/></a></div>
                                     <div class="post-header font-alt">
                                         <h2 class="post-title"><a href="{{ route('project.show', $item->id) }}">{{ $item->title }}</a></h2>
                                         <div class="post-meta">{{ $item->created_at->format('d-m-Y') }}
@@ -97,7 +102,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
-                            <h2 class="module-title font-alt">Our projects photo album</h2>
+                            <h2 class="module-title font-alt">
+                                <strong>Our projects photo album</strong>
+                            </h2>
                             <div class="module-subtitle font-serif"></div>
                         </div>
                     </div>
@@ -108,7 +115,7 @@
                     @foreach($albums as $album)
                         <li class="work-item illustration webdesign">
                             <a href="{{ route('album.show', $album->id) }}">
-                                <div class="work-image"><img alt="{{ $album->title }}" src={{ image_url($album->image, 56,31, true) }} /></div>
+                                <div class="work-image"><img class="img-rounded" alt="{{ $album->title }}" src={{ image_url($album->image, 50,27, true) }} /></div>
                                 <div class="work-caption font-alt">
                                     <h3 class="work-title">{{ $album->title }}</h3>
                                     {{--<div class="work-descr">Illustration</div>--}}

@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Album\Front;
 
-use App\Album;
 use Cache;
-use Illuminate\Http\Request;
+use App\Album;
 use App\Http\Controllers\Controller;
 
 class AlbumController extends Controller

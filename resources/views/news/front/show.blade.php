@@ -35,7 +35,7 @@
                                 <h5 class="widget-title font-alt">Categories</h5>
                                 <ul class="icon-list">
                                     @foreach($categories as $category)
-                                        <li><a href="{{ route('category.index', ['id' => $category->id, 'title' => $category->slug]) }}">{{ $category->title }}</a></li>
+                                        <li><a href="{{ route('category.index', $category->id) }}">{{ $category->title }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>

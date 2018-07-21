@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\News\Admin;
 
+use DB;
+use Auth;
+use App\News;
 use App\Category;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\Category\JEasyUi;
-use App\Http\Helpers\DateConverter\DateConverter;
 use App\Http\Helpers\Multimedia\Multimedia;
-use App\News;
-use Auth;
-use DB;
-use Illuminate\Http\Request;
+use App\Http\Helpers\DateConverter\DateConverter;
 
 class NewsController extends Controller
 {

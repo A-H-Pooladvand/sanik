@@ -44,8 +44,8 @@ return [
     // Which folder to store files in project, fill in 'public', 'resources', 'storage' and so on.
     // You should create routes to serve images if it is not set to public.
 
-    'base_directory' => (config('app.env') != "local") ? "../berenjkar.zeitoon.org" : "public",
-    #'base_directory' => "public",
+//    'base_directory' => (config('app.env') != "local") ? "../berenjkar.zeitoon.org" : "public",
+    'base_directory' => "public",
 
     'images_folder_name' => 'files/photos',
     'files_folder_name' => 'files/files',
