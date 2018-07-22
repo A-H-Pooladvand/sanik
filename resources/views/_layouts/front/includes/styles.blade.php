@@ -34,3 +34,4 @@
 <link href="{{ asset('assets_front/lib/simple-text-rotator/simpletextrotator.css') }}" rel="stylesheet">
 <link href="{{ asset('assets_front/css/style.css') }}" rel="stylesheet">
 <link id="color-scheme" href="{{ asset('assets_front/css/colors/default.css') }}" rel="stylesheet">
+<link id="color-scheme" href="{{ asset('assets_front/css/append.css') }}" rel="stylesheet">

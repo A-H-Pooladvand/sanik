@@ -8,7 +8,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('home') }}">SANIK GROUP</a>
+            <a class="navbar-brand position-relative custom-logo" href="{{ route('home') }}">
+                <img class="logo-img" src="{{ image_url('files/_root/logo.png',8,8, true) }}" alt="">
+                <span class="hidden-xs">
+                    <strong>SANIK GROUP</strong>
+                </span>
+            </a>
         </div>
 
         <div class="collapse navbar-collapse" id="custom-collapse">

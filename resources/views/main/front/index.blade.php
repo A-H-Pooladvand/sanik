@@ -7,28 +7,22 @@
             <div class="loader">Loading...</div>
         </div>
 
-        <section class="home-section home-full-height photography-page" id="home">
-
+        <section class="home-section home-parallax home-fade" id="home">
             <div class="hero-slider">
-
                 <ul class="slides">
-
                     @foreach($sliders as $slider)
-                        <li class="bg-dark" style="background-image:url({{ image_url($slider->image, 192,108) }});">
-                            <div class="container">
-                                <div class="image-caption">
-                                    <div class="font-alt caption-text">
-                                        <a href="{{ $slider->link }}">{{ $slider->title }}</a>
-                                    </div>
+                        <li class="bg-dark-30 bg-dark" style="background-image:url({{ image_url($slider->image, 192,108, true) }});">
+                            <div class="titan-caption">
+                                <div class="caption-content">
+                                    {{--<div class="font-alt mb-30 titan-title-size-1">Hello &amp; welcome</div>--}}
+                                    <div class="font-alt mb-30 titan-title-size-2">{{ $slider->title }}</div>
+                                    <a class="section-scroll btn btn-border-w btn-round" href="{{ $slider->link }}">Read More</a>
                                 </div>
                             </div>
                         </li>
                     @endforeach
-
                 </ul>
-
             </div>
-
         </section>
 
         <div class="main">
