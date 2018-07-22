@@ -87,7 +87,7 @@
                 }
             </script>
 
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHoa4zR2VS-825YrjmzpVZvvrnB6nYZ_E&callback=myMap"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKo2AQpyJz0QNKSS24sc34Z_3ggBZKhtw&callback=myMap"></script>
         </div>
         <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
     </main>
