@@ -77,17 +77,19 @@
             </section>
 
             <div id="map" style="width:100%;height:400px;"></div>
-            <script>
-                var map;
-                function initMap() {
-                    map = new google.maps.Map(document.getElementById('map'), {
-                        center: {lat: -34.397, lng: 150.644},
-                        zoom: 8
-                    });
-                }
-            </script>
+            @push('scripts')
+                <script>
+                    var map;
 
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr9Wm6vBLewdTB7FqTpg5TfzK6Dhh0XL4&callback=initMap" async defer></script>
+                    function initMap() {
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            center: {lat: -34.397, lng: 150.644},
+                            zoom: 8
+                        });
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr9Wm6vBLewdTB7FqTpg5TfzK6Dhh0XL4&callback=initMap" async defer></script>
+            @endpush
         </div>
         <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
     </main>
