@@ -24,7 +24,7 @@
                                 </div>
                             </div>
                             <div class="post-entry">
-                                <p>{{ $project->content }}</p>
+                                <p>{!! $project->content !!}</p>
                             </div>
                         </div>
                     </div>

@@ -114,7 +114,7 @@
 
         </div>
 
-        @component('_components.filemanager--multiple')
+        {{--@component('_components.filemanager--multiple')
 
             @slot('type') gallery @endslot
             @slot('label') گالری تصاویر @endslot
@@ -123,7 +123,7 @@
                 @slot('data', $project->galleries)
             @endif
 
-        @endcomponent
+        @endcomponent--}}
 
     </form>
 

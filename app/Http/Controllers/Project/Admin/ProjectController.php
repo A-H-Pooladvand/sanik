@@ -78,7 +78,6 @@ class ProjectController extends Controller
             'tags',
             'galleries',
             'categories',
-            'files'
         ])->findOrFail($id);
 
         $form = [

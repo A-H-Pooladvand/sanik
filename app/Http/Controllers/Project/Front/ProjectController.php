@@ -30,7 +30,6 @@ class ProjectController extends Controller
 
     public function show($id)
     {
-
         $project = Project::with('tags', 'galleries'/*, 'files'*/)
             ->where('status', 'publish')
             ->where('publish_at', '<=', now())

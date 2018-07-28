@@ -10,10 +10,6 @@ main {
     margin-top: 40px;
 }
 
-.navbar-custom {
-    padding: 25px;
-}
-
 .navbar-custom .nav li > a {
     color: #fff;
 }
@@ -46,4 +42,30 @@ main {
 
 .module-title {
     margin: 0 0 30px;
+}
+
+.navbar-custom {
+    height: 100px;
+}
+
+#menu--container {
+    padding-top: 25px;
+}
+
+#custom-collapse .navbar-nav > li {
+    padding-bottom: 25px;
+}
+
+#custom-collapse .navbar-nav .dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 400ms linear;
+    -moz-transition: max-height 400ms linear;
+    -ms-transition: max-height 400ms linear;
+    -o-transition: max-height 400ms linear;
+    transition: max-height 400ms linear;
+}
+
+#custom-collapse .navbar-nav > li:hover .dropdown-menu {
+    max-height: 500px;
 }

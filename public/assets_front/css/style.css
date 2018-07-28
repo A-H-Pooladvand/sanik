@@ -41,10 +41,10 @@ iframe {
     position: relative;
 }
 
-.leftauto {
+/*.leftauto {
     right: 0 !important;
     left: auto !important;
-}
+}*/
 
 /* Transition elsements */
 a,
@@ -2732,8 +2732,8 @@ Google map
     .navbar-custom .dropdown-menu {
         position: absolute;
         display: block;
-        visibility: hidden;
-        opacity: 0;
+        /*visibility: hidden;
+        opacity: 0;*/
     }
 
     .navbar-custom .open > .dropdown-menu {
