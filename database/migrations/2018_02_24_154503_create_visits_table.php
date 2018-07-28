@@ -21,7 +21,7 @@ class CreateVisitsTable extends Migration
             $table->string('agent', 191);
             $table->date('visited_at');
 
-            $table->unique(['ip', 'agent', 'visited_at', 'visit_type', 'visit_id']);
+            $table->unique(['ip', 'agent', 'visited_at', 'visit_type', 'visit_id'], 'visit_uniques');
         });
     }
 
