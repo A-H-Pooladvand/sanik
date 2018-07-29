@@ -4,9 +4,7 @@
 @section('content')
 
     <main>
-        <div class="page-loader">
-            <div class="loader">Loading...</div>
-        </div>
+
 
         <div class="main">
             <section class="module">
@@ -14,8 +12,17 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <h4 class="font-alt">Get in touch</h4><br/>
-                            <form id="contactForm" role="form" method="post" action="{{ route('contact.store') }}">
+                            <form id="" role="form" method="post" action="{{ route('contact.store') }}">
                                 {{ csrf_field() }}
+
+                                @if(Session::has('message'))
+                                    <div class="form-group">
+                                        <div class="alert alert-info">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            {{ Session::get('message') }}
+                                        </div>
+                                    </div>
+                                @endif
 
                                 <div class="form-group">
                                     <label class="sr-only" for="name">Name</label>
@@ -56,7 +63,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit">Submit</button>
+                                    <button class="btn btn-block btn-round btn-d" id="" type="submit">Submit</button>
                                 </div>
 
                             </form>

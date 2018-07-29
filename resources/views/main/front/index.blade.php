@@ -7,7 +7,7 @@
             <div class="loader">Loading...</div>
         </div>
 
-        <section class="home-section home-parallax home-fade" id="home">
+        <section class="home-section home-full-height home-parallax home-fade" id="home">
             <div class="hero-slider">
                 <ul class="slides">
                     @foreach($sliders as $slider)

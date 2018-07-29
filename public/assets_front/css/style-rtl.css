@@ -248,7 +248,7 @@ a,
 }
 
 .bg-dark {
-    background: #3F3695;
+    background: #222;
 }
 
 .bg-dark-30:before {
@@ -1265,7 +1265,7 @@ General Styles - Owlcarousel
 	Navbar
 --------------------------------------------------------------*/
 .navbar-custom {
-    background-color: #3E3197;
+    background-color: #444;
     border: 0;
     border-radius: 0;
     z-index: 1000;
@@ -2426,7 +2426,7 @@ Google map
 
 /* Tags */
 .tags a {
-    background: #3e3197;
+    background: #444;
     display: inline-block;
     font-size: 10px;
     color: #fff;

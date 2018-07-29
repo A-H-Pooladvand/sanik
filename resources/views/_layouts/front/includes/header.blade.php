@@ -1,4 +1,4 @@
-<nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation" style="background-color: #3e3197 !important">
+<nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation" style="background-color: #222 !important">
     <div class="container" id="nav--wrapper">
 
         <div id="menu--container">
@@ -10,10 +10,10 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand position-relative custom-logo" href="{{ route('home') }}">
-                    <img class="logo-img" src="{{ image_url('files/_root/logo.png',8,8, true) }}" alt="">
-                    <span class="hidden-xs">
-                    <strong>SANIK GROUP</strong>
-                </span>
+                    <img class="logo-img" src="{{ image_url('files/_root/logo.png', 4, 4, true) }}" alt="">
+                    <span>
+                        <strong>SANIK GROUP</strong>
+                    </span>
                 </a>
             </div>
 

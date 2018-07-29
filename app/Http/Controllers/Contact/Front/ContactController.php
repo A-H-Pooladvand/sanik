@@ -40,7 +40,7 @@ class ContactController extends Controller
         ]);
 
         if ($contact) {
-            return redirect()->back()->with('message', 'Message submitted, we will be in touch with you shortly.');
+            return redirect()->back()->with('message', 'Thank you. we will be in touch with you shortly.');
         }
 
         return redirect()->back()->with('message', 'Unfortunately there\'s been an error while trying to submit your message, please try again later.');
