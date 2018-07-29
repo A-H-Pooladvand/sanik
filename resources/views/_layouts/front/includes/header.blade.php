@@ -1,4 +1,4 @@
-<nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation" style="background-color: #222 !important">
+<nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation" style="background-color: #000 !important">
     <div class="container" id="nav--wrapper">
 
         <div id="menu--container">

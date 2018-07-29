@@ -11,7 +11,7 @@
             <div class="hero-slider">
                 <ul class="slides">
                     @foreach($sliders as $slider)
-                        <li class="bg-dark-30 bg-dark" style="background-image:url({{ image_url($slider->image, 192,108, true) }});">
+                        <li class="bg-dark-30 bg-dark" style="background-image:url({{ image_url($slider->image, 192,108) }});">
                             <div class="titan-caption">
                                 <div class="caption-content">
                                     {{--<div class="font-alt mb-30 titan-title-size-1">Hello &amp; welcome</div>--}}

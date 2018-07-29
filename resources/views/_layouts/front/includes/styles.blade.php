@@ -21,19 +21,19 @@
 <meta name="msapplication-TileImage" content="{{ image_url('files/_root/logo.png', 6, 6,true) }}">
 
 <meta name="theme-color" content="#ffffff">
-<link href="{{ asset('assets_front/lib/bootstrap/dist/css/bootstrap.min.css?1') }}" rel="stylesheet">
+<link href="{{ asset('assets_front/lib/bootstrap/dist/css/bootstrap.min.css?2') }}" rel="stylesheet">
 {{--<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">--}}
 {{--<link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">--}}
 {{--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">--}}
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-<link href="{{ asset('assets_front/lib/animate.css?1/animate.css?1') }}" rel="stylesheet">
-<link href="{{ asset('assets_front/lib/components-font-awesome/css/font-awesome.min.css?1') }}" rel="stylesheet">
-<link href="{{ asset('assets_front/lib/et-line-font/et-line-font.css?1') }}" rel="stylesheet">
-<link href="{{ asset('assets_front/lib/flexslider/flexslider.css?1') }}" rel="stylesheet">
-<link href="{{ asset('assets_front/lib/owl.carousel/dist/assets/owl.carousel.min.css?1') }}" rel="stylesheet">
-<link href="{{ asset('assets_front/lib/owl.carousel/dist/assets/owl.theme.default.min.css?1') }}" rel="stylesheet">
-<link href="{{ asset('assets_front/lib/magnific-popup/dist/magnific-popup.css?1') }}" rel="stylesheet">
-<link href="{{ asset('assets_front/lib/simple-text-rotator/simpletextrotator.css?1') }}" rel="stylesheet">
-<link href="{{ asset('assets_front/css/style.css?1') }}" rel="stylesheet">
-<link id="color-scheme" href="{{ asset('assets_front/css/colors/default.css?1') }}" rel="stylesheet">
-<link id="color-scheme" href="{{ asset('assets_front/css/append.css?1') }}" rel="stylesheet">
+<link href="{{ asset('assets_front/lib/animate.css?2/animate.css?2') }}" rel="stylesheet">
+<link href="{{ asset('assets_front/lib/components-font-awesome/css/font-awesome.min.css?2') }}" rel="stylesheet">
+<link href="{{ asset('assets_front/lib/et-line-font/et-line-font.css?2') }}" rel="stylesheet">
+<link href="{{ asset('assets_front/lib/flexslider/flexslider.css?2') }}" rel="stylesheet">
+<link href="{{ asset('assets_front/lib/owl.carousel/dist/assets/owl.carousel.min.css?2') }}" rel="stylesheet">
+<link href="{{ asset('assets_front/lib/owl.carousel/dist/assets/owl.theme.default.min.css?2') }}" rel="stylesheet">
+<link href="{{ asset('assets_front/lib/magnific-popup/dist/magnific-popup.css?2') }}" rel="stylesheet">
+<link href="{{ asset('assets_front/lib/simple-text-rotator/simpletextrotator.css?2') }}" rel="stylesheet">
+<link href="{{ asset('assets_front/css/style.css?2') }}" rel="stylesheet">
+<link id="color-scheme" href="{{ asset('assets_front/css/colors/default.css?2') }}" rel="stylesheet">
+<link id="color-scheme" href="{{ asset('assets_front/css/append.css?2') }}" rel="stylesheet">
