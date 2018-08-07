@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AlbumTableSeeder::class);
         $this->call(NewsTableSeeder::class);
         $this->call(SliderTableSeeder::class);
+        $this->call(ScopeOfWorkTableSeeder::class);
     }
 }

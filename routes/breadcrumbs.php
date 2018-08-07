@@ -301,3 +301,28 @@ Breadcrumbs::register('project-category-edit', function (Breadcrumb $breadcrumbs
     $breadcrumbs->parent('project-category-show', $category);
     $breadcrumbs->push('ویرایش دسته بندی پروژه', route('admin.project.category.edit', $category->id));
 });
+
+/** Scope of Work */
+
+# Scope of Work
+Breadcrumbs::register('scope-of-works', function (Breadcrumb $breadcrumbs) {
+    $breadcrumbs->push('لیست دامنه کار ها', route('admin.scope_of_work.index'));
+});
+
+# Scope of Work > Create
+Breadcrumbs::register('scope-of-work-create', function (Breadcrumb $breadcrumbs) {
+    $breadcrumbs->parent('scope-of-works');
+    $breadcrumbs->push('افزودن دامنه کار', route('admin.scope_of_work.create'));
+});
+
+# Scope of Work > Show
+Breadcrumbs::register('scope-of-work-show', function (Breadcrumb $breadcrumbs, $scope_of_work) {
+    $breadcrumbs->parent('scope-of-works');
+    $breadcrumbs->push('مشاهده دامنه کار', route('admin.scope_of_work.show', $scope_of_work->id));
+});
+
+# Scope of Work > Show > Edit
+Breadcrumbs::register('scope-of-work-edit', function (Breadcrumb $breadcrumbs, $scope_of_work) {
+    $breadcrumbs->parent('scope-of-work-show', $scope_of_work);
+    $breadcrumbs->push('ویرایش دامنه کار', route('admin.scope_of_work.edit', $scope_of_work->id));
+});

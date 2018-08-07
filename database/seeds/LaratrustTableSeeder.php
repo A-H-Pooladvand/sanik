@@ -251,6 +251,31 @@ class LaratrustTableSeeder extends Seeder
                     ],
                 ]
             ],
+            // Scope of Work
+            [
+                'title' => 'دامنه کار',
+                'detail' => [
+                    ['name' => 'create-scope-of-work',
+                        'display_name' => 'ایجاد دامنه کار',
+                        'description' => 'توانایی ایجاد دامنه کار',
+                    ],
+                    [
+                        'name' => 'read-scope-of-work',
+                        'display_name' => 'مشاهده دامنه کار',
+                        'description' => 'توانایی مشاهده دامنه کار',
+                    ],
+                    [
+                        'name' => 'edit-scope-of-work',
+                        'display_name' => 'ویرایش دامنه کار',
+                        'description' => 'توانایی ویرایش دامنه کار',
+                    ],
+                    [
+                        'name' => 'delete-scope-of-work',
+                        'display_name' => 'حذف دامنه کار',
+                        'description' => 'توانایی حذف دامنه کار',
+                    ],
+                ]
+            ],
             //Tag
             [
                 'title' => 'کلمات کلیدی',

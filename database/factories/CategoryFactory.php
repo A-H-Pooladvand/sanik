@@ -12,7 +12,7 @@ $factory->define(Category::class, function (Faker $faker) use ($factory) {
 
     return [
         'category_type' => $classes[rand(0, (count($classes) - 1))],
-        'title' => $faker->realText(50),
+        'title' => $faker->slug(1),
         'slug' => $faker->slug(1),
     ];
 });

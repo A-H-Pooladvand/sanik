@@ -4,6 +4,7 @@ use App\News;
 use App\Album;
 use App\Project;
 use App\Category;
+use App\ScopeOfWork;
 
 return [
     'front_menu' => [
@@ -14,6 +15,16 @@ return [
                 return [
                     'title' => $item->title,
                     'link' => route('category.index', $item->id)
+                ];
+            })
+        ],
+        [
+            'title' => 'Scope of Work',
+            'link' => route('scope_of_work.index'),
+            'sub' => ScopeOfWork::where('status', 'publish')->get()->map(function (ScopeOfWork $item) {
+                return [
+                    'title' => $item->title,
+                    'link' => route('scope_of_work.show', $item->link)
                 ];
             })
         ],

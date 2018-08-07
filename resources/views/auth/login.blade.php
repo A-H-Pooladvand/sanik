@@ -15,8 +15,8 @@
                                 {{--<i class="fa fa-sign-in fa-5x text-primary"></i>--}}
 
                                 <div class="form-group">
-                                    <h3 class="text-center text-primary m-t-6 m-b-3">
-                                        <strong>SIGN IN</strong>
+                                    <h3 class="text-center  m-t-6 m-b-3">
+                                        <strong class="heading-title">SIGN IN</strong>
                                     </h3>
                                 </div>
 
@@ -58,7 +58,7 @@
 
                                 <div class="form-group">
                                     <div>
-                                        <button type="submit" class="btn btn-primary btn-lg btn-block">LOG IN</button>
+                                        <button class="btn btn-round btn-b btn-block">Login</button>
                                         {{--<hr>--}}
                                         {{--<a class="btn btn-link" href="{{ route('password.request') }}">رمز عبور خود را فراموش کرده اید؟</a>--}}
                                     </div>

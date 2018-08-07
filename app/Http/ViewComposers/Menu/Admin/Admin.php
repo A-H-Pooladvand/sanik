@@ -157,6 +157,25 @@ return [
             ]
         ]
     ],
+    // Scope of Work
+    [
+        'title' => 'دامنه کار',
+        'icon' => 'fa fa-fw fa-building-o',
+        'link' => '#',
+        'permission' => 'scope-of-work',
+        'sub' => [
+            [
+                'title' => 'افزودن دامنه',
+                'link' => route('admin.scope_of_work.create'),
+                'permission' => 'create-scope-of-work'
+            ],
+            [
+                'title' => 'لیست دامنه ها',
+                'link' => route('admin.scope_of_work.index'),
+                'permission' => 'read-scope-of-work'
+            ]
+        ]
+    ],
     // Page
 //    [
 //        'title' => 'صفحات',
