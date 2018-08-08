@@ -10,7 +10,31 @@
             <section class="module-small">
                 <div class="container">
 
-                    <div class="post">
+                    <div class="row">
+
+                        <div class="col-sm-7">
+                            <div class="post-header font-alt">
+                                <h1 class="post-title">{{ $about->title }}</h1>
+                                <h5>{{ $about->summary }}</h5>
+                                <div class="post-meta">{{ $about->created_at->format('Y-d-m') }}
+                                </div>
+                            </div>
+                            <div class="post-entry">
+                                <p>{!! $about->content !!}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-5">
+
+                            <div class="post-thumbnail">
+                                <img src="{{ image_url($about->image, 50, 70, true) }}" class="img-rounded" alt="Blog Featured Image"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                   {{-- <div class="post">
                         <div class="post-thumbnail">
                             <img src="{{ image_url($about->image, 192, 60, true) }}" class="img-rounded" alt="Blog Featured Image"/>
                         </div>
@@ -23,7 +47,7 @@
                         <div class="post-entry">
                             <p>{!! $about->content !!}</p>
                         </div>
-                    </div>
+                    </div>--}}
 
                 </div>
             </section>

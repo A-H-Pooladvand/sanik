@@ -25,6 +25,8 @@ class ScopeOfWorkController extends Controller
         $scopeOfWorks = $this->getGrid($request)->items($scopeOfWorks);
         $scopeOfWorks['rows'] = $scopeOfWorks['rows']->each(function ($item) {
             $item->status_farsi = $item->status_fa;
+            $item->created_at_farsi = $item->created_at_fa;
+            $item->updated_at_farsi = $item->updated_at_fa;
         });
 
         return $scopeOfWorks;

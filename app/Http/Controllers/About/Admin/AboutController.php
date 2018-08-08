@@ -28,6 +28,9 @@ class AboutController extends Controller
         $abouts = $this->getGrid($request)->items($abouts);
         $abouts['rows'] = $abouts['rows']->each(function (About $about) {
             $about->status_farsi = $about->status_fa;
+            $about->created_at_farsi = $about->created_at_fa;
+            $about->updated_at_farsi = $about->updated_at_fa;
+
         });
 
         return $abouts;

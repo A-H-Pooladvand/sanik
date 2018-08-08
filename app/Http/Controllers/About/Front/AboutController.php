@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 
 class AboutController extends Controller
 {
-    public function index(Request $request)
+    /*public function index(Request $request)
     {
         $this->seo()->setTitle('About us');
         $this->seo()->setDescription('About us');
@@ -27,7 +27,7 @@ class AboutController extends Controller
         });
 
         return view('news.front.index', compact('about'));
-    }
+    }*/
 
     public function show($id)
     {

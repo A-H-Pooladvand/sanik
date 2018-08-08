@@ -32,8 +32,18 @@
                                 return row.status_farsi;
                             }
                         },
-                        {field: 'created_at', width: 150, sortable: true, title: 'تاریخ ایجاد', align: 'center'},
-                        {field: 'updated_at', width: 150, sortable: true, title: 'تاریخ ویرایش', align: 'center'},
+                        {
+                            field: 'created_at', width: 150, sortable: true, title: 'تاریخ ایجاد', align: 'center',
+                            formatter: function (val, row) {
+                                return row.created_at_farsi;
+                            }
+                        },
+                        {
+                            field: 'updated_at', width: 150, sortable: true, title: 'تاریخ ویرایش', align: 'center',
+                            formatter: function (val, row) {
+                                return row.updated_at_farsi;
+                            }
+                        },
                     ]],
                     toolbar: [
                         {

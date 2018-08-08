@@ -72,14 +72,14 @@ class Category extends Model
         return $this->albums()->latest();
     }
 
-    public function getCreatedAtAttribute()
-    {
-        return jdate($this->attributes['created_at'])->format('Y/m/d');
-    }
-
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = strFa($value);
+    }
+
+    public function getCreatedAtAttribute()
+    {
+        return jdate($this->attributes['created_at'])->format('Y/m/d');
     }
 
     public function getUpdatedAtAttribute()
