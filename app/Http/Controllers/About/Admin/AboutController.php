@@ -2,34 +2,144 @@
 
 namespace App\Http\Controllers\About\Admin;
 
+use DB;
+use Auth;
 use App\About;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Helpers\Multimedia\Multimedia;
+use App\Http\Helpers\DateConverter\DateConverter;
 
 class AboutController extends Controller
 {
-    public function show()
+    protected $form = [];
+
+    public function index()
     {
-        $about = About::findOrFail(1);
+        $this->form = ['action' => route('admin.about.items'), 'link' => route('admin.about.index')];
+
+        return view('about.admin.index', ['form' => $this->form]);
+    }
+
+    public function items(Request $request)
+    {
+        $abouts = About::select(['id', 'status', 'title', 'summary', 'created_at', 'updated_at']);
+
+        $abouts = $this->getGrid($request)->items($abouts);
+        $abouts['rows'] = $abouts['rows']->each(function (About $about) {
+            $about->status_farsi = $about->status_fa;
+        });
+
+        return $abouts;
+    }
+
+    public function create()
+    {
+        $this->form = ['action' => route('admin.about.store')];
+
+        return view('about.admin.form', ['form' => $this->form]);
+    }
+
+    public function store(Request $request)
+    {
+        $this->convertDates($request);
+
+        $this->validate($request, $this->validator());
+
+        DB::transaction(function () use ($request) {
+
+            $about = About::create($this->fields($request));
+
+            Multimedia::createOrUpdate($request, $about->galleries(), 0);
+
+//            Multimedia::createOrUpdate($request, $about->files(), 0, 'multimedia');
+
+        });
+
+        return ['message' => 'مطلب جدید با موفقیت ثبت شد.'];
+    }
+
+    public function show($id)
+    {
+        $about = About::with('tags', 'author')->findOrFail($id);
+
         return view('about.admin.show', compact('about'));
     }
 
-    public function edit()
+    public function edit($id)
     {
-        $about = About::findOrFail(1);
+        $about = About::with([
+            'galleries',
+            'files'
+        ])->findOrFail($id);
 
-        return view('about.admin.form', compact('about'));
+        $this->form = ['action' => route('admin.about.update', $about['id']), 'method' => 'put'];
+
+        return view('about.admin.form', ['about' => $about, 'form' => $this->form]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $about = About::find(1);
-        $about->title = $request->title;
-        $about->image = $request->image;
-        $about->summary = $request->summary;
-        $about->content = $request['content'];
-        $about->save();
+        $this->convertDates($request);
 
-        return ['message' => 'درباره ما با موفقیت ویرایش گردید.'];
+        $this->validate($request, $this->validator());
+
+        DB::transaction(function () use ($request, $id) {
+
+            $about = About::find($id);
+
+            $about->update($this->fields($request, $about));
+
+            Multimedia::createOrUpdate($request, $about->galleries(), 0);
+
+//            Multimedia::createOrUpdate($request, $about->files(), 0, 'multimedia');
+
+        });
+
+        return ['message' => 'مطلب جدید با موفقیت ثبت شد.'];
+    }
+
+    public function destroy($id)
+    {
+        $ids = explode(',', $id);
+
+        About::whereIn('id', $ids)->delete();
+    }
+
+    // Methods
+
+    private function validator()
+    {
+        $rules = [
+            'title' => 'required|max:100',
+            'summary' => 'required|max:250',
+            'content' => 'required',
+            'publish_at' => 'required',
+        ];
+
+        return $rules;
+    }
+
+    private function fields(Request $request, About $about = null)
+    {
+        return [
+            'user_id' => Auth::id(),
+            'title' => $request['title'],
+            'summary' => $request['summary'],
+            'content' => $request['content'],
+            'image' => empty($request['image']) ? $about['image'] : $request['image'],
+            'publish_at' => $request['publish_at'],
+            'expire_at' => $request['expire_at'],
+            'status' => $request['status'],
+        ];
+    }
+
+    private function convertDates(Request $request)
+    {
+        if ( ! empty($request->expire_at)) {
+            $request->merge(['expire_at' => DateConverter::toGregorian($request['expire_at'])]);
+        }
+
+        $request->merge(['publish_at' => DateConverter::toGregorian($request['publish_at'])]);
     }
 }

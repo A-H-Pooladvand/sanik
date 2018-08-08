@@ -326,3 +326,28 @@ Breadcrumbs::register('scope-of-work-edit', function (Breadcrumb $breadcrumbs, $
     $breadcrumbs->parent('scope-of-work-show', $scope_of_work);
     $breadcrumbs->push('ویرایش دامنه کار', route('admin.scope_of_work.edit', $scope_of_work->id));
 });
+
+/** About */
+
+# About
+Breadcrumbs::register('about', function (Breadcrumb $breadcrumbs) {
+    $breadcrumbs->push('لیست درباره ما', route('admin.about.index'));
+});
+
+# About > Create
+Breadcrumbs::register('about-create', function (Breadcrumb $breadcrumbs) {
+    $breadcrumbs->parent('about');
+    $breadcrumbs->push('افزودن درباره ما', route('admin.about.create'));
+});
+
+# About > Show
+Breadcrumbs::register('about-show', function (Breadcrumb $breadcrumbs, $about) {
+    $breadcrumbs->parent('about');
+    $breadcrumbs->push('مشاهده درباره ما', route('admin.about.show', $about->id));
+});
+
+# About > Show > Edit
+Breadcrumbs::register('about-edit', function (Breadcrumb $breadcrumbs, $about) {
+    $breadcrumbs->parent('about-show', $about);
+    $breadcrumbs->push('ویرایش درباره ما', route('admin.about.edit', $about->id));
+});

@@ -15,11 +15,17 @@ class CreateAboutsTable extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedMediumInteger('user_id');
+            $table->enum('status', ['publish', 'draft'])->default('publish')->comment('منتشر شده یا پیشنویس');
+            $table->string('title', 100);
+            $table->string('summary', 500);
             $table->string('image', 120)->nullable();
-            $table->string('title', 100)->nullable();
-            $table->string('summary', 300)->nullable();
-            $table->text('content')->nullable();
+            $table->text('content');
+            $table->timestamp('publish_at')->comment('تاریخ انتشار');
+            $table->timestamp('expire_at')->nullable()->comment('تاریخ انقضا');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
         });
     }
 

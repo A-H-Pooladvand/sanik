@@ -72,7 +72,7 @@
         </div>
 
         <div class="text-right">
-            <a href="{{ route('admin.news.edit', $scope->id) }}" class="btn btn-info">ویرایش</a>
+            <a href="{{ route('admin.scope_of_work.edit', $scope->id) }}" class="btn btn-info">ویرایش</a>
         </div>
 
     </div>

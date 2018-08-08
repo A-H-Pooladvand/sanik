@@ -36,7 +36,7 @@ class LaratrustTableSeeder extends Seeder
                 'role' => [
                     'name' => 'superAdmin',
                     'display_name' => 'ادمین کل',
-                    'description' => 'دسترسی به تمامی امکانات سایت',
+                    'description' => 'دسترسی به تمامی امکانات سایت'
                 ]
             ],
             [
@@ -53,7 +53,7 @@ class LaratrustTableSeeder extends Seeder
                 'role' => [
                     'name' => 'supporter',
                     'display_name' => 'پشتیبان سایت',
-                    'description' => 'دسترسی تقریبی به تمامی امکانات سایت',
+                    'description' => 'دسترسی تقریبی به تمامی امکانات سایت'
                 ]
             ],
             [
@@ -70,7 +70,7 @@ class LaratrustTableSeeder extends Seeder
                 'role' => [
                     'name' => 'admin',
                     'display_name' => 'صاحب سیستم',
-                    'description' => 'خریدار سایت - دسترسی کل و دسترسی ایجاد نقش ها',
+                    'description' => 'خریدار سایت - دسترسی کل و دسترسی ایجاد نقش ها'
                 ]
             ]
         ];
@@ -83,7 +83,7 @@ class LaratrustTableSeeder extends Seeder
                     [
                         'name' => 'admin-panel',
                         'display_name' => 'پنل مدیریت',
-                        'description' => 'توانایی مشاهده پنل مدیریت',
+                        'description' => 'توانایی مشاهده پنل مدیریت'
                     ]
                 ]
             ],
@@ -94,7 +94,7 @@ class LaratrustTableSeeder extends Seeder
                     [
                         'name' => 'file-manager',
                         'display_name' => 'فایل منیجر',
-                        'description' => 'توانایی استفاده از فایل منیجر',
+                        'description' => 'توانایی استفاده از فایل منیجر'
                     ]
                 ]
             ],
@@ -105,22 +105,22 @@ class LaratrustTableSeeder extends Seeder
                     [
                         'name' => 'create-user',
                         'display_name' => 'ایجاد کاربر جدید',
-                        'description' => 'توانایی ایجاد کاربر جدید',
+                        'description' => 'توانایی ایجاد کاربر جدید'
                     ],
                     [
                         'name' => 'read-user',
                         'display_name' => 'مشاهده کاربران',
-                        'description' => 'توانایی مشاهده کاربران',
+                        'description' => 'توانایی مشاهده کاربران'
                     ],
                     [
                         'name' => 'edit-user',
                         'display_name' => 'ویرایش کاربران',
-                        'description' => 'توانایی ویرایش کاربران',
+                        'description' => 'توانایی ویرایش کاربران'
                     ],
                     [
                         'name' => 'delete-user',
                         'display_name' => 'حذف کاربران',
-                        'description' => 'توانایی حذف کاربران',
+                        'description' => 'توانایی حذف کاربران'
                     ],
                 ]
             ],
@@ -131,22 +131,22 @@ class LaratrustTableSeeder extends Seeder
                     [
                         'name' => 'create-slider',
                         'display_name' => 'ایجاد اسلایدر جدید',
-                        'description' => 'توانایی ایجاد اسلایدر جدید',
+                        'description' => 'توانایی ایجاد اسلایدر جدید'
                     ],
                     [
                         'name' => 'read-slider',
                         'display_name' => 'مشاهده اسلاید ها',
-                        'description' => 'توانایی مشاهده اسلاید ها',
+                        'description' => 'توانایی مشاهده اسلاید ها'
                     ],
                     [
                         'name' => 'edit-slider',
                         'display_name' => 'ویرایش اسلاید ها',
-                        'description' => 'توانایی ویرایش اسلاید ها',
+                        'description' => 'توانایی ویرایش اسلاید ها'
                     ],
                     [
                         'name' => 'delete-slider',
                         'display_name' => 'حذف اسلاید ها',
-                        'description' => 'توانایی حذف اسلاید ها',
+                        'description' => 'توانایی حذف اسلاید ها'
                     ],
                 ]
             ],
@@ -157,22 +157,22 @@ class LaratrustTableSeeder extends Seeder
                     [
                         'name' => 'create-acl',
                         'display_name' => 'ایجاد نقش و دسترسی جدید',
-                        'description' => 'توانایی ایجاد نقش و دسترسی جدید',
+                        'description' => 'توانایی ایجاد نقش و دسترسی جدید'
                     ],
                     [
                         'name' => 'read-acl',
                         'display_name' => 'مشاهده نقش ها و دسترسی ها',
-                        'description' => 'توانایی مشاهده نقش ها و دسترسی ها',
+                        'description' => 'توانایی مشاهده نقش ها و دسترسی ها'
                     ],
                     [
                         'name' => 'edit-acl',
                         'display_name' => 'ویرایش نقش ها و دسترسی ها',
-                        'description' => 'توانایی ویرایش نقش ها و دسترسی ها',
+                        'description' => 'توانایی ویرایش نقش ها و دسترسی ها'
                     ],
                     [
                         'name' => 'delete-acl',
                         'display_name' => 'حذف نقش ها و دسترسی ها',
-                        'description' => 'توانایی حذف نقش ها و دسترسی ها',
+                        'description' => 'توانایی حذف نقش ها و دسترسی ها'
                     ],
                 ]
             ],
@@ -182,22 +182,22 @@ class LaratrustTableSeeder extends Seeder
                 'detail' => [
                     ['name' => 'create-news',
                         'display_name' => 'ایجاد خبر',
-                        'description' => 'توانایی ایجاد خبر',
+                        'description' => 'توانایی ایجاد خبر'
                     ],
                     [
                         'name' => 'read-news',
                         'display_name' => 'مشاهده خبر',
-                        'description' => 'توانایی مشاهده خبر',
+                        'description' => 'توانایی مشاهده خبر'
                     ],
                     [
                         'name' => 'edit-news',
                         'display_name' => 'ویرایش خبر',
-                        'description' => 'توانایی ویرایش خبر',
+                        'description' => 'توانایی ویرایش خبر'
                     ],
                     [
                         'name' => 'delete-news',
                         'display_name' => 'حذف خبر',
-                        'description' => 'توانایی حذف خبر',
+                        'description' => 'توانایی حذف خبر'
                     ],
                 ]
             ],
@@ -207,22 +207,22 @@ class LaratrustTableSeeder extends Seeder
                 'detail' => [
                     ['name' => 'create-project',
                         'display_name' => 'ایجاد پروژه',
-                        'description' => 'توانایی ایجاد پروژه',
+                        'description' => 'توانایی ایجاد پروژه'
                     ],
                     [
                         'name' => 'read-project',
                         'display_name' => 'مشاهده پروژه',
-                        'description' => 'توانایی مشاهده پروژه',
+                        'description' => 'توانایی مشاهده پروژه'
                     ],
                     [
                         'name' => 'edit-project',
                         'display_name' => 'ویرایش پروژه',
-                        'description' => 'توانایی ویرایش پروژه',
+                        'description' => 'توانایی ویرایش پروژه'
                     ],
                     [
                         'name' => 'delete-project',
                         'display_name' => 'حذف پروژه',
-                        'description' => 'توانایی حذف پروژه',
+                        'description' => 'توانایی حذف پروژه'
                     ],
                 ]
             ],
@@ -232,22 +232,22 @@ class LaratrustTableSeeder extends Seeder
                 'detail' => [
                     ['name' => 'create-album',
                         'display_name' => 'ایجاد آلبوم تصاویر',
-                        'description' => 'توانایی ایجاد آلبوم تصاویر',
+                        'description' => 'توانایی ایجاد آلبوم تصاویر'
                     ],
                     [
                         'name' => 'read-album',
                         'display_name' => 'مشاهده آلبوم تصاویر',
-                        'description' => 'توانایی مشاهده آلبوم تصاویر',
+                        'description' => 'توانایی مشاهده آلبوم تصاویر'
                     ],
                     [
                         'name' => 'edit-album',
                         'display_name' => 'ویرایش آلبوم تصاویر',
-                        'description' => 'توانایی ویرایش آلبوم تصاویر',
+                        'description' => 'توانایی ویرایش آلبوم تصاویر'
                     ],
                     [
                         'name' => 'delete-album',
                         'display_name' => 'حذف آلبوم تصاویر',
-                        'description' => 'توانایی حذف آلبوم تصاویر',
+                        'description' => 'توانایی حذف آلبوم تصاویر'
                     ],
                 ]
             ],
@@ -257,22 +257,22 @@ class LaratrustTableSeeder extends Seeder
                 'detail' => [
                     ['name' => 'create-scope-of-work',
                         'display_name' => 'ایجاد دامنه کار',
-                        'description' => 'توانایی ایجاد دامنه کار',
+                        'description' => 'توانایی ایجاد دامنه کار'
                     ],
                     [
                         'name' => 'read-scope-of-work',
                         'display_name' => 'مشاهده دامنه کار',
-                        'description' => 'توانایی مشاهده دامنه کار',
+                        'description' => 'توانایی مشاهده دامنه کار'
                     ],
                     [
                         'name' => 'edit-scope-of-work',
                         'display_name' => 'ویرایش دامنه کار',
-                        'description' => 'توانایی ویرایش دامنه کار',
+                        'description' => 'توانایی ویرایش دامنه کار'
                     ],
                     [
                         'name' => 'delete-scope-of-work',
                         'display_name' => 'حذف دامنه کار',
-                        'description' => 'توانایی حذف دامنه کار',
+                        'description' => 'توانایی حذف دامنه کار'
                     ],
                 ]
             ],
@@ -283,22 +283,22 @@ class LaratrustTableSeeder extends Seeder
                     [
                         'name' => 'create-tag',
                         'display_name' => 'ایجاد کلمات کلیدی',
-                        'description' => 'توانایی ایجاد کلمات کلیدی',
+                        'description' => 'توانایی ایجاد کلمات کلیدی'
                     ],
                     [
                         'name' => 'read-tag',
                         'display_name' => 'مشاهده کلمات کلیدی',
-                        'description' => 'توانایی مشاهده کلمات کلیدی',
+                        'description' => 'توانایی مشاهده کلمات کلیدی'
                     ],
                     [
                         'name' => 'edit-tag',
                         'display_name' => 'ویرایش کلمات کلیدی',
-                        'description' => 'توانایی ویرایش کلمات کلیدی',
+                        'description' => 'توانایی ویرایش کلمات کلیدی'
                     ],
                     [
                         'name' => 'delete-tag',
                         'display_name' => 'حذف کلمات کلیدی',
-                        'description' => 'توانایی حذف کلمات کلیدی',
+                        'description' => 'توانایی حذف کلمات کلیدی'
                     ],
                 ]
             ],
@@ -309,22 +309,22 @@ class LaratrustTableSeeder extends Seeder
 //                    [
 //                        'name' => 'create-page',
 //                        'display_name' => 'ایجاد صفحه',
-//                        'description' => 'توانایی ایجاد صفحه',
+//                        'description' => 'توانایی ایجاد صفحه'
 //                    ],
 //                    [
 //                        'name' => 'read-page',
 //                        'display_name' => 'مشاهده صفحه',
-//                        'description' => 'توانایی مشاهده صفحه',
+//                        'description' => 'توانایی مشاهده صفحه'
 //                    ],
 //                    [
 //                        'name' => 'edit-page',
 //                        'display_name' => 'ویرایش صفحه',
-//                        'description' => 'توانایی ویرایش صفحه',
+//                        'description' => 'توانایی ویرایش صفحه'
 //                    ],
 //                    [
 //                        'name' => 'delete-page',
 //                        'display_name' => 'حذف صفحه',
-//                        'description' => 'توانایی حذف صفحه',
+//                        'description' => 'توانایی حذف صفحه'
 //                    ],
 //                ]
 //            ],
@@ -333,15 +333,25 @@ class LaratrustTableSeeder extends Seeder
                 'title' => 'درباره ما',
                 'detail' => [
                     [
+                        'name' => 'create-about',
+                        'display_name' => 'ایجاد درباره ما',
+                        'description' => 'توانایی ایجاد درباره ما'
+                    ],
+                    [
                         'name' => 'read-about',
                         'display_name' => 'مشاهده درباره ما',
-                        'description' => 'توانایی مشاهده درباره ما',
+                        'description' => 'توانایی مشاهده درباره ما'
                     ],
                     [
                         'name' => 'edit-about',
                         'display_name' => 'ویرایش درباره ما',
-                        'description' => 'توانایی ویرایش درباره ما',
-                    ]
+                        'description' => 'توانایی ویرایش درباره ما'
+                    ],
+                    [
+                        'name' => 'delete-about',
+                        'display_name' => 'حذف درباره ما',
+                        'description' => 'توانایی حذف درباره ما'
+                    ],
                 ]
             ],
             //Contact-Us
@@ -351,12 +361,12 @@ class LaratrustTableSeeder extends Seeder
                     [
                         'name' => 'read-contact',
                         'display_name' => 'مشاهده تماس با ما',
-                        'description' => 'توانایی مشاهده تماس با ما',
+                        'description' => 'توانایی مشاهده تماس با ما'
                     ],
                     [
                         'name' => 'edit-contact',
                         'display_name' => 'ویرایش تماس با ما',
-                        'description' => 'توانایی ویرایش تماس با ما',
+                        'description' => 'توانایی ویرایش تماس با ما'
                     ]
                 ]
             ],

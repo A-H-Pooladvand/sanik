@@ -225,14 +225,14 @@ return [
         'permission' => 'about',
         'sub' => [
             [
-                'title' => 'مشاهده درباره ما',
-                'link' => route('admin.about.show', 1),
-                'permission' => 'read-about'
+                'title' => 'افزودن درباره ما',
+                'link' => route('admin.about.create'),
+                'permission' => 'create-about'
             ],
             [
-                'title' => 'ویرایش درباره ما',
-                'link' => route('admin.about.edit', 1),
-                'permission' => 'edit-about'
+                'title' => 'لیست درباره ما',
+                'link' => route('admin.about.index'),
+                'permission' => 'read-about'
             ]
         ]
     ],

@@ -33,8 +33,10 @@ class Multimedia
 
         $query->delete();
         foreach ($paths as $i => $path) {
-            if (empty($path))
+
+            if (empty($path)) {
                 continue;
+            }
 
             $query->create([
                 'title' => $titles[$i],

@@ -15,7 +15,6 @@
 
 @yield('content')
 
-
 @include('_layouts.front.includes.footer')
 
 @include('_layouts.front.includes.scripts')

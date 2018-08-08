@@ -21,7 +21,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     @foreach($_header_front_menu as $menu)
                         <li class="dropdown">
-                            <a class="{{ !empty($menu['sub']) ? 'dropdown-toggle': '' }}" data-toggle="{{ !empty($menu['sub']) ? 'dropdown': '' }}" href="{{ $menu['link'] }}">{{ $menu['title'] }}</a>
+                            <a class="{{ (empty($menu['sub'])) ? '' : 'dropdown-toggle' }}" data-toggle="{{ empty($menu['sub'])  ? '': 'dropdown' }}" href="{{ $menu['link'] }}">{{ $menu['title'] }}</a>
                             @if(!empty($menu['sub']))
                                 <ul class="dropdown-menu">
                                     <li class="dropdown">

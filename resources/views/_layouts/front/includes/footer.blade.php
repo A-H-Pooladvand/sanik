@@ -38,7 +38,7 @@
                         <li><a href="{{ route('news.index') }}">Company news</a></li>
                         <li><a href="{{ route('project.index') }}">Projects</a></li>
                         <li><a href="{{ route('album.index') }}">Albums</a></li>
-                        <li><a href="{{ route('about.show') }}">About</a></li>
+                        {{--<li><a href="{{ route('about.show') }}">About</a></li>--}}
                         <li><a href="{{ route('contact.show') }}">Contact</a></li>
                     </ul>
                 </div>

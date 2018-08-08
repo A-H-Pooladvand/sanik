@@ -1,10 +1,12 @@
 <?php
 
+use App\About;
 use App\News;
 use App\Album;
 use App\Project;
 use App\Category;
 use App\ScopeOfWork;
+use Illuminate\Database\Eloquent\Builder;
 
 return [
     'front_menu' => [
@@ -50,7 +52,16 @@ return [
         ],
         [
             'title' => 'About',
-            'link' => route('about.show'),
+            'link' => '#',
+            'sub' => About::where('publish_at', '<=', now())
+                ->where(function (Builder $about) {
+                    $about->whereNull('expire_at')->orWhere('expire_at', '>=', now());
+                })->get()->map(function (About $item) {
+                    return [
+                        'title' => $item->title,
+                        'link' => route('about.show', $item->id)
+                    ];
+                })
         ],
         [
             'title' => 'Contact',

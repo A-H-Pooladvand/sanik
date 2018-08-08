@@ -2,15 +2,13 @@
 
 namespace App;
 
-//use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
     protected $guarded = ['id'];
 
-    protected $casts = [
-        'has_comment' => 'boolean'
-    ];
+    protected $casts = ['has_comment' => 'boolean'];
 
     /** A news post has an author */
     public function author()
@@ -56,11 +54,10 @@ class News extends Model
     }
 
     /**
-     * Mutator SECTION
+     * Mutator section
      *
      * Convert fields to persian and human readable format
      */
-
     public function getCreatedAtFaAttribute()
     {
         return jdate($this->attributes['created_at'])->format('Y/m/d');

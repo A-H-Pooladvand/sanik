@@ -1,38 +1,61 @@
 @extends('_layouts.front.index')
 
 @section('content')
-    <main>
 
+    <main>
         <div class="page-loader">
             <div class="loader">Loading...</div>
         </div>
-
         <div class="main">
+            <section class="module-small">
+                <div class="container">
 
-            <section class="module" id="about">
-                <div class="row position-relative m-0">
-                    <div class="col-xs-12 col-md-6 side-image" data-background="{{ $about->image }}"></div>
-                    <div class="col-xs-12 col-md-6 col-md-offset-6 side-image-text">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h2 class="module-title font-alt align-left">{{ $about->title }}</h2>
-                                <div class="module-subtitle font-serif align-left">{{ $about->summary }}</div>
-                                <p>{{ $about->content }}</p>
+                    <div class="post">
+                        <div class="post-thumbnail">
+                            <img src="{{ image_url($about->image, 192, 60, true) }}" class="img-rounded" alt="Blog Featured Image"/>
+                        </div>
+                        <div class="post-header font-alt">
+                            <h1 class="post-title">{{ $about->title }}</h1>
+                            <h5>{{ $about->summary }}</h5>
+                            <div class="post-meta">{{ $about->created_at->format('Y-d-m') }}
                             </div>
                         </div>
+                        <div class="post-entry">
+                            <p>{!! $about->content !!}</p>
+                        </div>
                     </div>
+
                 </div>
             </section>
 
-        </div>
+            @if(!empty($about->galleries))
+                <section class="module">
+                    <div class="container">
+                        <div class="row">
+                            <div class="owl-carousel text-center" data-items="5" data-pagination="false" data-navigation="false">
 
-        <div class="scroll-up">
-            <a href="#totop">
-                <i class="fa fa-angle-double-up"></i>
-            </a>
-        </div>
+                                @foreach($about->galleries as $item)
+                                    <div class="owl-item">
+                                        <div class="col-sm-12">
+                                            <div class="ex-product">
 
+                                                <a href="#">
+                                                    <img class="img-circle" src="{{ image_url($item->path, 50, 50, true) }}" alt="{{ $item->title }}"/>
+                                                </a>
+
+                                                <h4 class="shop-item-title font-alt">{{ $item->title }}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            @endif
+
+        </div>
+        <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
     </main>
 
-
-@endsection
+@stop

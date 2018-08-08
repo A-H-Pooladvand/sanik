@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class Grid extends Filter
 {
@@ -69,7 +70,7 @@ class Grid extends Filter
      * Prepare query for JEasyUi grid table
      *
      * @param Builder $query
-     * @return array
+     * @return array|Collection
      */
     public function items(Builder $query)
     {
