@@ -64,6 +64,11 @@
                 @endcomponent
 
                 <div class="form-group">
+                    <label for="input_priority" class="control-label">اولویت</label>
+                    <input id="input_priority" name="priority" type="text" class="form-control" value="{{ $about->priority ?? '1' }}">
+                </div>
+
+                <div class="form-group">
                     <label for="input_status" class="control-label">وضعیت</label>
                     <br>
                     @component('_components.bootstrap-select--single')

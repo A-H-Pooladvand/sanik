@@ -118,6 +118,7 @@ class AboutController extends Controller
             'summary' => 'required|max:250',
             'content' => 'required',
             'publish_at' => 'required',
+            'priority'=> 'required|max:255|integer'
         ];
 
         return $rules;
@@ -134,6 +135,7 @@ class AboutController extends Controller
             'publish_at' => $request['publish_at'],
             'expire_at' => $request['expire_at'],
             'status' => $request['status'],
+            'priority' => $request['priority'],
         ];
     }
 

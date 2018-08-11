@@ -91,6 +91,7 @@ class ScopeOfWorkController extends Controller
             'image' => 'required',
             'summary' => 'required|max:400',
             'body' => 'required',
+            'priority' => 'required|integer|max:255'
         ];
 
         if (request()->method() === 'PUT')
@@ -108,6 +109,7 @@ class ScopeOfWorkController extends Controller
             'body' => $request['body'],
             'image' => empty($request['image']) ? $scopeOfWork['image'] : $request['image'],
             'status' => $request['status'],
+            'priority' => $request['priority']
         ];
     }
 }

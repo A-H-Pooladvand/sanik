@@ -66,6 +66,11 @@
                     @endcomponent
                 </div>
 
+                <div class="form-group">
+                    <label for="input_priority" class="control-label">اولویت</label>
+                    <input id="input_priority" name="priority" type="text" class="form-control" value="{{ $scope->priority ?? '1' }}">
+                </div>
+
 
             </div>
 
