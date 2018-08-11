@@ -21,6 +21,7 @@ class CreateScopeOfWorksTable extends Migration
             $table->string('image', 200);
             $table->text('body');
             $table->string('link', 250);
+            $table->unsignedTinyInteger('priority')->default(1);
             $table->enum('status', ['publish', 'draft'])->default('publish')->comment('منتشر شده یا پیشنویس');
             $table->timestamps();
 

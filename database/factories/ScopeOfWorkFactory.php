@@ -13,6 +13,7 @@ $factory->define(ScopeOfWork::class, function (Faker $faker) use ($factory) {
         'link' => str_slug($title),
         'summary' => $faker->realText(400),
         'image' => 'files/_test/' . rand(1, 10) . '.jpg',
+        'priority' => rand(1, 255),
         'body' => $faker->realText(rand(1, 5) * 500),
     ];
 });

@@ -21,6 +21,7 @@ class CreateAboutsTable extends Migration
             $table->string('summary', 500);
             $table->string('image', 120)->nullable();
             $table->text('content');
+            $table->unsignedTinyInteger('priority')->default(1);
             $table->timestamp('publish_at')->comment('تاریخ انتشار');
             $table->timestamp('expire_at')->nullable()->comment('تاریخ انقضا');
             $table->timestamps();

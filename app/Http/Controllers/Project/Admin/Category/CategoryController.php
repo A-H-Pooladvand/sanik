@@ -122,6 +122,7 @@ class CategoryController extends Controller
         $rules = [
             'slug' => 'required|max:70|unique:categories,slug,null,id,category_type,' . Project::class . '|regex:/(^[A-Za-z-_ ]+$)+/',
             'title' => 'required|max:70',
+            'priority' => 'required|integer|max:255',
         ];
 
         if ($request->method() === 'PUT')
@@ -140,6 +141,7 @@ class CategoryController extends Controller
             'slug' => $request['slug'],
             'title' => $request['title'],
             'parent_id' => $request->parent,
+            'priority' => $request['priority'],
             'category_type' => Project::class,
         ];
     }

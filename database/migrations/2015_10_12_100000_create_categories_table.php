@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string('category_type', 50)->index();
             $table->string('title', 70)->index();
             $table->string('slug', 70)->index();
+            $table->unsignedTinyInteger('priority')->default(1);
             $table->timestamps();
 
             $table->foreign('parent_id')->references('id')->on('categories');

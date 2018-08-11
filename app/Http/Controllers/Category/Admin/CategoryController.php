@@ -102,6 +102,7 @@ class CategoryController extends Controller
             'slug' => 'required|max:70|unique:categories,slug,null,id,category_type,' . Blog::class . '|regex:/(^[A-Za-z-_ ]+$)+/',
             'title' => 'required|max:70',
             'type' => 'required|max:50',
+            'priority' => 'required|integer|max:255',
         ];
 
         if ($request->method() === 'PUT')

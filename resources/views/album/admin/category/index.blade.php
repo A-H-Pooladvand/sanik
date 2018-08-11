@@ -23,6 +23,7 @@
                         {field: 'checkbox', checkbox: true},
                         {field: 'title', title: 'عنوان'},
                         {field: 'slug', title: 'نامک', halign: 'center'},
+                        {field: 'priority', title: 'اولویت', halign: 'center'},
                         {field: 'created_at', width: 150, align: 'center', title: 'تاریخ ایجاد'},
                         {field: 'updated_at', width: 150, align: 'center', title: 'تاریخ ویرایش'}
                     ]],

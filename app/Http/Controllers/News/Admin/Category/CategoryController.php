@@ -20,7 +20,7 @@ class CategoryController extends Controller
         $categories = Category::with('children')->where([
             'category_type' => News::class,
             'parent_id' => null,
-        ])->select('id', 'slug', 'title', 'created_at', 'updated_at');
+        ])->select('id', 'slug', 'priority', 'title', 'created_at', 'updated_at');
 
         return $this->getGrid($request)->items($categories);
     }
@@ -100,8 +100,7 @@ class CategoryController extends Controller
                 continue;
             }
 
-            if($category->news->count())
-            {
+            if ($category->news->count()) {
                 $errors['delete_errors'][] = "دسته {$category->title} به ماژول اخبار متصل است و حذف نشد.<br>";
                 continue;
             }
@@ -122,6 +121,7 @@ class CategoryController extends Controller
         $rules = [
             'slug' => 'required|max:70|unique:categories,slug,null,id,category_type,' . News::class . '|regex:/(^[A-Za-z-_ ]+$)+/',
             'title' => 'required|max:70',
+            'priority' => 'required|integer|max:255',
         ];
 
         if ($request->method() === 'PUT')
@@ -140,6 +140,7 @@ class CategoryController extends Controller
             'slug' => $request['slug'],
             'title' => $request['title'],
             'parent_id' => $request->parent,
+            'priority' => $request['priority'],
             'category_type' => News::class,
         ];
     }

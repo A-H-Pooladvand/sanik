@@ -7,7 +7,7 @@
 
         <div class="row">
 
-            <div class="col-sm-6">
+            <div class="col-sm-8">
 
                 <div class="form-group">
                     <label for="name" class="control-label">نام</label>
@@ -51,7 +51,7 @@
 
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-4">
 
                 <div class="form-group">
                     <label for="avatar" class="control-label">تصویر کاربری</label>

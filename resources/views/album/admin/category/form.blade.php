@@ -18,6 +18,15 @@
 
             <div class="col-md-4">
                 <div class="form-group">
+                    <label for="input_priority" class="control-label">اولویت</label>
+                    <input id="input_priority" name="priority" type="text" class="form-control" value="{{ $category->priority ?? '1' }}">
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="col-md-4">
+                <div class="form-group">
                     <label for="input_slug" class="control-label">نامک</label>
                     <input id="input_slug" name="slug" type="text" class="form-control" placeholder="فقط حروف انگلیسی، زیرخط و یا خط تیره" value="{{ $category->slug ?? '' }}">
                 </div>
