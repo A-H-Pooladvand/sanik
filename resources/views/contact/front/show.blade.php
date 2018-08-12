@@ -2,9 +2,7 @@
 
 
 @section('content')
-
     <main>
-
 
         <div class="main">
             <section class="module">
@@ -71,7 +69,7 @@
                         </div>
                         <div class="col-sm-6">
                             <h4 class="font-alt">{{ $contact->title }}</h4><br/>
-                            <p>{{ $contact->content }}</p>
+                            <p>{!! $contact->content !!}</p>
                             {{--<hr/>--}}
                             {{-- <h4 class="font-alt">Business Hours</h4><br/>
                              <ul class="list-unstyled">

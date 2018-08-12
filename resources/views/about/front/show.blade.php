@@ -15,8 +15,8 @@
                     <div class="post">
 
                         @if(!empty($about->image))
-                            <div class="post-thumbnail">
-                                <img src="{{ image_url($about->image, 192, 60, true) }}" class="img-rounded" alt="Blog Featured Image"/>
+                            <div class="post-thumbnail text-center">
+                                <img src="{{ image_url($about->image, 192, 60) }}" class="img-rounded" alt="Blog Featured Image"/>
                             </div>
                         @endif
 

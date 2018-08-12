@@ -12,8 +12,8 @@
                 <div class="container">
 
                     <div class="post">
-                        <div class="post-thumbnail">
-                            <img src="{{ image_url($scope->image, 192, 60, true) }}" class="img-rounded" alt="Blog Featured Image"/>
+                        <div class="post-thumbnail text-center">
+                            <img src="{{ image_url($scope->image, 192, 60) }}" class="img-rounded" alt="Blog Featured Image"/>
                         </div>
                         <div class="post-header font-alt">
                             <h1 class="post-title">{{ $scope->title }}</h1>
