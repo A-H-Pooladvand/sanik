@@ -118,7 +118,7 @@ class AboutController extends Controller
             'summary' => 'required|max:250',
             'content' => 'required',
             'publish_at' => 'required',
-            'priority'=> 'required|max:255|integer'
+            'priority' => 'required|max:255|integer'
         ];
 
         return $rules;
@@ -126,12 +126,22 @@ class AboutController extends Controller
 
     private function fields(Request $request, About $about = null)
     {
+        $image = null;
+
+        if ($request['check_img'] === "exist") {
+            if (empty($request['image'])) {
+                $image = $about->image;
+            } else {
+                $image = $request['image'];
+            }
+        }
+
         return [
             'user_id' => Auth::id(),
             'title' => $request['title'],
             'summary' => $request['summary'],
             'content' => $request['content'],
-            'image' => empty($request['image']) ? $about['image'] : $request['image'],
+            'image' => $image,
             'publish_at' => $request['publish_at'],
             'expire_at' => $request['expire_at'],
             'status' => $request['status'],

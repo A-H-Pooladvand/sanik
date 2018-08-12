@@ -45,9 +45,40 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <img id="image-preview" class="thumbnail {{ !empty($about->image) ? '' : 'hidden' }}" width="100%" src="{{ image_url($about->image ?? '', 37,23,true) }}">
+                <div class="form-group position-relative">
+                    <img id="image-preview" class="thumbnail {{ ! empty($about->image) ? '' : 'hidden' }}" width="100%" src="{{ image_url($about->image ?? '', 37, 23, true) }}">
+                    <span id="close-pic" class="{{ ! empty($about->image) ? '' : 'hidden' }}" style="position: absolute; top: 15px; left: 15px; width: 20px; height: 20px; cursor: pointer">
+                        <i class="fa fa-times" style="border: 1px solid #0b0b0b; padding: 0.2rem; border-radius: 4px"></i>
+                    </span>
                 </div>
+
+                <input type="hidden" id="check-img" name="check_img" value="exist">
+
+                @push('scripts')
+                    <script>
+                        $(function () {
+                            $('#close-pic').click(function () {
+                                $(this).closest('.form-group').find('img').addClass('hidden');
+                                $('#check-img').val('removed');
+
+                                if ($('#check-img').val() === "removed") {
+                                    $('#close-pic').addClass('hidden');
+                                } else {
+                                    $('#close-pic').removeClass('hidden');
+                                }
+                            });
+
+                            $('#image-preview').change(function () {
+                                if ($('#img-preview').hasClass('hidden')) {
+                                    $('#close-pic').addClass('hidden');
+                                } else {
+                                    $('#close-pic').removeClass('hidden');
+                                }
+                            });
+
+                        });
+                    </script>
+                @endpush
 
                 @component('_components.date_picker')
                     @slot('title')تاریخ انتشار@endslot
