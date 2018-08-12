@@ -100,11 +100,12 @@ class CategoryController extends Controller
                 continue;
             }
 
-            if($category->project->count())
+            if($category->projects->count())
             {
                 $errors['delete_errors'][] = "دسته {$category->title} به ماژول اخبار متصل است و حذف نشد.<br>";
                 continue;
             }
+
             $category->delete();
         }
 
