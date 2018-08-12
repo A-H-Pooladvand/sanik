@@ -2229,6 +2229,8 @@ Google map
 .post-columns .post-entry {
     padding: 10px 0 0;
     margin: 0 0 10px;
+    height: 80px;
+    overflow: hidden;
 }
 
 .post-columns.wo-border .post-entry {
