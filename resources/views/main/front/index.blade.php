@@ -15,8 +15,8 @@
                             <div class="titan-caption">
                                 <div class="caption-content">
                                     {{--<div class="font-alt mb-30 titan-title-size-1">Hello &amp; welcome</div>--}}
-                                    <div class="font-alt mb-30 titan-title-size-2">{{ $slider->title }}</div>
-                                    <a class="section-scroll btn btn-border-w btn-round" href="{{ $slider->link }}">Read More</a>
+{{--                                    <div class="font-alt mb-30 titan-title-size-2">{{ $slider->title }}</div>--}}
+                                    {{--<a class="section-scroll btn btn-border-w btn-round" href="{{ $slider->link }}">Read More</a>--}}
                                 </div>
                             </div>
                         </li>
