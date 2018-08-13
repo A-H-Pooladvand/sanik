@@ -15,7 +15,7 @@
 
                         <div class="post-thumbnail text-center">
 
-                            <div class="img--custom" style="background: url({{ image_url($scope->image, 108, 60) }}) no-repeat center center; width: 100%; height: 300px;background-size: 100% 100%;border-radius: 4px"></div>
+                            <div class="img--custom" style="background: url({{ image_url($scope->image, 108, 45) }}) no-repeat center center; width: 100%; height: 450px;background-size: 100% 100%;border-radius: 4px"></div>
 
                             {{--<img src="{{ image_url($scope->image, 108, 30, true) }}" class="img-rounded" alt="Blog Featured Image"/>--}}
                         </div>

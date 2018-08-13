@@ -17,7 +17,7 @@
                         @if(!empty($about->image))
                             <div class="post-thumbnail text-center">
                                 {{--<img src="{{ image_url($about->image, 192, 60) }}" class="img-rounded" alt="Blog Featured Image"/>--}}
-                                <div class="img--custom" style="background: url({{ image_url($about->image, 108, 60) }}) no-repeat center center; width: 100%; height: 300px;background-size: 100% 100%;border-radius: 4px"></div>
+                                <div class="img--custom" style="background: url({{ image_url($about->image, 108, 45) }}) no-repeat center center; width: 100%; height: 450px;background-size: 100% 100%;border-radius: 4px"></div>
                             </div>
                         @endif
 
