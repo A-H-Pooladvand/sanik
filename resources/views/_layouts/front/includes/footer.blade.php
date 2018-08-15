@@ -36,9 +36,8 @@
                     <h5 class="widget-title font-alt">Quick Access</h5>
                     <ul class="icon-list">
                         <li><a href="{{ route('news.index') }}">Company news</a></li>
-                        <li><a href="{{ route('scope_of_work.index') }}">Scope of Work</a></li>
                         <li><a href="{{ route('project.index') }}">Projects</a></li>
-                        <li><a href="{{ route('album.index') }}">Albums</a></li>
+                        <li><a href="{{ route('album.index') }}">Gallery</a></li>
                         <li><a href="{{ route('contact.show') }}">Contact</a></li>
                     </ul>
                 </div>
