@@ -2224,6 +2224,7 @@ Google map
 .post-columns .post-title {
     line-height: 1.8;
     font-size: 14px;
+    height: 50px;
 }
 
 .post-columns .post-entry {
