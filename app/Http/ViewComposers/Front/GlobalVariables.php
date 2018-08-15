@@ -34,7 +34,7 @@ return [
     }),
 
     'latest_abouts' => Cache::remember('_footer_abouts', 1, function () {
-        return About::latest()->orderBy('priority')->take(5)->get();
+        return About::latest()->orderBy('priority', 'DESC')->take(5)->get();
     }),
 
     'front_menu' => [
