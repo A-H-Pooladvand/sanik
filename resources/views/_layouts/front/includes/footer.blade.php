@@ -25,8 +25,8 @@
                 <div class="widget">
                     <h5 class="widget-title font-alt">Albums</h5>
                     <ul class="icon-list">
-                        @foreach($_footer_latest_albums as $item)
-                            <li><a href="{{ route('album.show', $item->id) }}">{{ $item->title }}</a></li>
+                        @foreach($_footer_latest_abouts as $item)
+                            <li><a href="{{ route('about.show', $item->id) }}">{{ $item->title }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -36,9 +36,9 @@
                     <h5 class="widget-title font-alt">Quick Access</h5>
                     <ul class="icon-list">
                         <li><a href="{{ route('news.index') }}">Company news</a></li>
+                        <li><a href="{{ route('scope_of_work.index') }}">Scope of Work</a></li>
                         <li><a href="{{ route('project.index') }}">Projects</a></li>
                         <li><a href="{{ route('album.index') }}">Albums</a></li>
-                        {{--<li><a href="{{ route('about.show') }}">About</a></li>--}}
                         <li><a href="{{ route('contact.show') }}">Contact</a></li>
                     </ul>
                 </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\About;
 use App\Album;
 use App\Category;
 use App\News;
@@ -32,8 +33,8 @@ return [
             ->get(['id', 'title', 'summary', 'image', 'created_at']);
     }),
 
-    'latest_albums' => Cache::remember('_footer_albums', 1, function () {
-        return Album::latest()->take(5)->get();
+    'latest_abouts' => Cache::remember('_footer_abouts', 1, function () {
+        return About::latest()->orderBy('priority')->take(5)->get();
     }),
 
     'front_menu' => [
