@@ -23,7 +23,7 @@
             </div>
             <div class="col-sm-3">
                 <div class="widget">
-                    <h5 class="widget-title font-alt">Albums</h5>
+                    <h5 class="widget-title font-alt">About us</h5>
                     <ul class="icon-list">
                         @foreach($_footer_latest_abouts as $item)
                             <li><a href="{{ route('about.show', $item->id) }}">{{ $item->title }}</a></li>
